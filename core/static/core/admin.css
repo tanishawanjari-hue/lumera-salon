@@ -1,0 +1,4296 @@
+/* ================================
+   LUMÉRA DJANGO ADMIN
+   ================================ */
+
+:root {
+    --lumera-black: #070707;
+    --lumera-dark: #0d0d0d;
+    --lumera-card: #111111;
+    --lumera-gold: #d9a83f;
+    --lumera-gold-soft: #b88a2c;
+    --lumera-white: #f5f5f5;
+    --lumera-muted: #999999;
+    --lumera-border: #292929;
+}
+
+
+/* ---------- BODY ---------- */
+
+body {
+    background: var(--lumera-black) !important;
+    color: var(--lumera-white) !important;
+}
+
+
+/* ---------- HEADER ---------- */
+
+#header {
+    background: #050505 !important;
+    border-bottom: 1px solid var(--lumera-border);
+    height: auto;
+    padding: 16px 28px;
+}
+
+#branding h1,
+#branding h1 a {
+    color: var(--lumera-gold) !important;
+    font-family: Georgia, serif;
+    font-size: 24px;
+    letter-spacing: 4px;
+    font-weight: 500;
+}
+
+#user-tools {
+    color: var(--lumera-muted) !important;
+}
+
+#user-tools a {
+    color: var(--lumera-white) !important;
+}
+
+#user-tools a:hover {
+    color: var(--lumera-gold) !important;
+}
+
+
+/* ---------- MAIN CONTENT ---------- */
+
+#content {
+    background: var(--lumera-black);
+    padding: 30px;
+}
+
+#content-main {
+    background: transparent;
+}
+
+
+/* ---------- HEADINGS ---------- */
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--lumera-white) !important;
+}
+
+.module h2,
+.module caption {
+    background: var(--lumera-dark) !important;
+    color: var(--lumera-gold) !important;
+    border-bottom: 1px solid var(--lumera-border);
+}
+
+
+/* ---------- MODULES / TABLES ---------- */
+
+.module {
+    background: var(--lumera-card) !important;
+    border: 1px solid var(--lumera-border);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.module table {
+    background: var(--lumera-card);
+}
+
+.module th {
+    color: var(--lumera-gold) !important;
+}
+
+.module td,
+.module th {
+    border-color: var(--lumera-border) !important;
+}
+
+tr:hover {
+    background: #161616 !important;
+}
+
+
+/* ---------- LINKS ---------- */
+
+a {
+    color: var(--lumera-gold) !important;
+}
+
+a:hover {
+    color: #f0c96b !important;
+}
+
+
+/* ---------- BUTTONS ---------- */
+
+.button,
+input[type="submit"],
+input[type="button"],
+.submit-row input,
+a.button {
+    background: var(--lumera-gold) !important;
+    color: #080808 !important;
+    border: none !important;
+    border-radius: 2px;
+    font-weight: 500;
+}
+
+.button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+.submit-row input:hover,
+a.button:hover {
+    background: #e5b653 !important;
+    color: #080808 !important;
+}
+
+
+/* ---------- FORM FIELDS ---------- */
+
+input,
+textarea,
+select {
+    background: #0b0b0b !important;
+    color: var(--lumera-white) !important;
+    border: 1px solid #333 !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--lumera-gold) !important;
+    outline: none;
+}
+
+
+/* ---------- SIDEBAR ---------- */
+
+#nav-sidebar {
+    background: #090909 !important;
+    border-right: 1px solid var(--lumera-border);
+}
+
+#nav-sidebar a {
+    color: var(--lumera-white) !important;
+}
+
+#nav-sidebar a:hover {
+    color: var(--lumera-gold) !important;
+    background: #141414 !important;
+}
+
+
+/* ---------- BREADCRUMBS ---------- */
+
+div.breadcrumbs {
+    background: #0b0b0b !important;
+    border-bottom: 1px solid var(--lumera-border);
+    color: var(--lumera-muted) !important;
+}
+
+div.breadcrumbs a {
+    color: var(--lumera-gold) !important;
+}
+
+
+/* ---------- MESSAGES ---------- */
+
+.messagelist li {
+    background: #111 !important;
+    border-left: 3px solid var(--lumera-gold);
+}
+
+
+/* ---------- PAGINATION ---------- */
+
+.paginator {
+    background: var(--lumera-card) !important;
+    border-top: 1px solid var(--lumera-border);
+}
+
+/* ---------- ADMIN TABLE ROWS ---------- */
+
+#content-main .module,
+#content-main .module table,
+#content-main .module tbody,
+#content-main .module tr,
+#content-main .module td,
+#content-main .module th {
+    background: #111111 !important;
+    color: #f5f5f5 !important;
+}
+
+#content-main .module tr:hover {
+    background: #181818 !important;
+}
+
+#content-main .module td,
+#content-main .module th {
+    border-color: #292929 !important;
+}
+
+#content-main .module td a,
+#content-main .module th a {
+    color: #d9a83f !important;
+}
+/* =========================================================
+   LUMÉRA ADMIN LOGIN
+   ========================================================= */
+
+body.login {
+    background: #050505 !important;
+}
+
+/* Login card */
+#login {
+    width: 420px;
+    max-width: calc(100% - 40px);
+    margin: 100px auto 0;
+    padding: 0;
+    background: #0b0b0b;
+    border: 1px solid #3a3a3a;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+/* Luméra heading */
+#login h1 {
+    padding: 24px 20px 20px;
+    margin: 0;
+    border-bottom: 1px solid #252525;
+    text-align: center;
+}
+
+#login h1 a {
+    color: #d9a83f !important;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 6px;
+    text-decoration: none;
+}
+
+/* Login form area */
+#login form {
+    padding: 28px 28px 24px;
+    background: #0b0b0b;
+}
+
+/* Labels */
+#login label {
+    color: #f2f2f2;
+    font-size: 14px;
+}
+
+/* Inputs */
+#login input[type="text"],
+#login input[type="password"] {
+    width: 100%;
+    box-sizing: border-box;
+    height: 46px;
+    margin-top: 7px;
+    padding: 0 13px;
+
+    background: #111111 !important;
+    color: #f5f5f5 !important;
+
+    border: 1px solid #3a3a3a;
+    border-radius: 2px;
+
+    font-size: 14px;
+    outline: none;
+}
+
+/* Input focus */
+#login input[type="text"]:focus,
+#login input[type="password"]:focus {
+    border-color: #d9a83f;
+    box-shadow: 0 0 0 1px rgba(217, 168, 63, 0.15);
+}
+
+/* Prevent browser autofill from making inputs blue */
+#login input:-webkit-autofill,
+#login input:-webkit-autofill:hover,
+#login input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #f5f5f5 !important;
+    -webkit-box-shadow: 0 0 0 1000px #111111 inset !important;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+/* Login button */
+#login .submit-row {
+    padding: 18px 0 0;
+    margin: 0;
+    border: 0;
+    background: transparent;
+}
+
+#login .submit-row input[type="submit"] {
+    width: 100%;
+    height: 46px;
+
+    background: #d9a83f;
+    color: #080808;
+
+    border: none;
+    border-radius: 0;
+
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#login .submit-row input[type="submit"]:hover {
+    background: #e5b64e;
+    transform: translateY(-1px);
+}
+
+/* Small spacing between fields */
+#login .form-row {
+    padding: 0 0 20px;
+    border: 0;
+}
+
+/* Back / help links */
+#login .password-reset-link {
+    color: #999 !important;
+}
+
+#login a {
+    color: #d9a83f;
+}
+
+#login a:hover {
+    color: #e5b64e;
+}
+/* =========================================================
+   LUMÉRA CUSTOM LOGIN BRANDING
+   ========================================================= */
+
+.lumera-login-brand {
+    text-align: center;
+    padding: 24px 20px 20px;
+    border-bottom: 1px solid #252525;
+}
+
+.lumera-login-brand h1 {
+    margin: 0;
+    color: #d9a83f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 6px;
+}
+
+.lumera-login-brand span {
+    display: block;
+    margin-top: 8px;
+    color: #999;
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+/* =========================================================
+   CLEAN ADMIN LOGIN PAGE
+   ========================================================= */
+
+/* Remove Django admin header */
+body.login #header {
+    display: none !important;
+}
+
+/* Remove left navigation sidebar */
+body.login #nav-sidebar {
+    display: none !important;
+}
+
+/* Remove breadcrumb bar */
+body.login #nav-breadcrumbs {
+    display: none !important;
+}
+
+/* Remove Django's extra "Log in" heading */
+body.login #content > h1 {
+    display: none !important;
+}
+
+/* Remove unnecessary sidebar/content spacing */
+body.login #container {
+    margin: 0 !important;
+}
+
+body.login #content {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body.login #content-main {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Center our login card */
+body.login #login {
+    margin: 110px auto 0 !important;
+}
+/* =========================================================
+   FINAL CLEANUP — LUMÉRA ADMIN LOGIN
+   ========================================================= */
+
+/* Hide Django breadcrumb bar */
+body.login .breadcrumbs {
+    display: none !important;
+}
+
+/* Hide Django sidebar toggle */
+body.login #toggle-nav {
+    display: none !important;
+}
+
+/* Hide Django's extra "Log in" heading */
+body.login #content h1 {
+    display: none !important;
+}
+
+/* Make the login content use the full screen */
+body.login #content-main {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Properly center the Luméra login card */
+body.login #login {
+    width: 420px;
+    max-width: calc(100% - 40px);
+    margin: 110px auto 0 !important;
+}
+/* Hide only Django's page heading, not Luméra branding */
+body.login #content > h1 {
+    display: none !important;
+}
+
+/* Hide Django sidebar toggle */
+body.login #toggle-nav-sidebar,
+body.login .toggle-nav-sidebar {
+    display: none !important;
+}
+
+/* Remove sidebar layout from login page */
+body.login #main {
+    display: block !important;
+}
+
+body.login #content {
+    margin-left: 0 !important;
+    width: 100% !important;
+}
+
+/* Keep login card centered */
+body.login #content-main {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body.login #login {
+    margin: 110px auto 0 !important;
+}
+/* Restore Luméra branding on login card */
+body.login .lumera-login-brand h1 {
+    display: block !important;
+    margin: 0 !important;
+    color: #d9a83f !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: 30px !important;
+    font-weight: 500 !important;
+    letter-spacing: 6px !important;
+    text-align: center !important;
+}
+/* Final Luméra logo fix */
+body.login .lumera-login-brand {
+    position: relative;
+}
+
+body.login .lumera-login-brand::before {
+    content: "LUMÉRA";
+    display: block;
+    margin-bottom: 14px;
+
+    color: #d9a83f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 6px;
+    text-align: center;
+}
+/* =========================================================
+   FINAL LUMÉRA LOGIN LAYOUT
+   ========================================================= */
+
+body.login {
+    background: #050505 !important;
+}
+
+/* Keep Django's main layout full width */
+body.login #container {
+    min-height: 100vh;
+    margin: 0 !important;
+}
+
+/* Center the login area */
+body.login #content {
+    min-height: 100vh;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Give the login card its proper width */
+body.login #content-main {
+    width: 420px !important;
+    max-width: calc(100% - 40px) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Login card */
+body.login #login {
+    width: 100% !important;
+    box-sizing: border-box;
+    margin: 0 !important;
+}
+/* =========================================================
+   FINAL LUMÉRA LOGIN — CENTERED & FIXED WIDTH
+   ========================================================= */
+
+body.login {
+    background: #050505 !important;
+}
+
+/* Full page */
+body.login #content {
+    min-height: 100vh;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* ACTUAL LOGIN CONTENT — DO NOT LET IT STRETCH */
+body.login #content-main {
+    width: 420px !important;
+    max-width: calc(100% - 40px) !important;
+    flex: 0 0 420px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+}
+
+/* Login card */
+body.login #login {
+    width: 420px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+}
+
+/* Keep the form inside the card */
+body.login #login form {
+    width: 100%;
+    box-sizing: border-box;
+}
+/* Center the login card exactly in the browser viewport */
+body.login #content-main {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 450px;
+    margin: 0;
+}
+/* ===== LOGIN PAGE — TRUE CENTER ===== */
+
+body.login {
+    min-height: 100vh;
+}
+
+body.login #container {
+    width: 100vw !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body.login #content {
+    width: 100vw !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    min-height: 100vh !important;
+}
+
+body.login #content-main {
+    width: 450px !important;
+    max-width: 450px !important;
+
+    float: none !important;
+    margin: 0 !important;
+}
+/* =================================
+   LOGOUT CONFIRMATION DIALOG
+   ================================= */
+
+.logout-modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 99999;
+
+    background: rgba(0, 0, 0, 0.72);
+
+    align-items: center;
+    justify-content: center;
+}
+
+.logout-modal.show {
+    display: flex;
+}
+
+.logout-dialog {
+    width: 420px;
+    max-width: calc(100% - 40px);
+
+    background: #0b0b0b;
+
+    border: 1px solid #3a3a3a;
+
+    padding: 35px;
+
+    text-align: center;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+}
+
+.logout-dialog h2 {
+    margin: 0 0 14px;
+
+    color: #e3ad32;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.logout-dialog p {
+    margin: 0 auto 30px;
+
+    color: #cfcfcf;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.logout-dialog-actions {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+}
+
+.logout-dialog-actions button {
+    min-width: 110px;
+
+    padding: 11px 20px;
+
+    border: 1px solid #e3ad32;
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+#cancel-logout {
+    background: transparent;
+
+    color: #e3ad32;
+}
+
+#cancel-logout:hover {
+    background: #e3ad32;
+
+    color: #0b0b0b;
+}
+
+#confirm-logout {
+    background: #e3ad32;
+
+    color: #0b0b0b;
+}
+
+#confirm-logout:hover {
+    background: #f0c04a;
+}
+/* =========================================
+   LUMÉRA LOGGED OUT PAGE
+========================================= */
+
+.logout-page {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.logout-card {
+    width: 460px;
+    max-width: 100%;
+    background: #080808;
+    border: 1px solid #292929;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
+}
+
+.logout-brand {
+    text-align: center;
+    padding: 36px 30px 28px;
+    border-bottom: 1px solid #292929;
+}
+
+.logout-brand h1 {
+    margin: 0;
+    color: #e3ad35;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 34px;
+    font-weight: 500;
+    letter-spacing: 7px;
+}
+
+.logout-brand span {
+    display: block;
+    margin-top: 12px;
+    color: #999;
+    font-size: 10px;
+    letter-spacing: 5px;
+}
+
+.logout-content {
+    text-align: center;
+    padding: 38px 35px 40px;
+}
+
+.logout-content h2 {
+    margin: 0 0 16px;
+    color: #f2f2f2;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    font-weight: 400;
+}
+
+.logout-content p {
+    margin: 0 auto 30px;
+    max-width: 350px;
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.logout-login-btn {
+    display: inline-block;
+    padding: 14px 34px;
+    background: #e3ad35;
+    color: #080808 !important;
+    text-decoration: none !important;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: all 0.25s ease;
+}
+
+.logout-login-btn:hover {
+    background: #f0c45c;
+    color: #080808 !important;
+    transform: translateY(-1px);
+}
+.logout-page {
+    min-height: 80vh !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.logout-card {
+    width: 460px !important;
+    background: #080808 !important;
+    border: 1px solid #e3ad35 !important;
+}
+/* =========================================
+   FULL-SCREEN LOGOUT PAGE
+========================================= */
+
+body:has(.logout-page) #header {
+    display: none !important;
+}
+
+body:has(.logout-page) #nav-sidebar {
+    display: none !important;
+}
+
+body:has(.logout-page) #breadcrumbs {
+    display: none !important;
+}
+
+body:has(.logout-page) #content {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+body:has(.logout-page) #container {
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+body:has(.logout-page) #main {
+    margin: 0 !important;
+}
+
+body:has(.logout-page) {
+    background: #050505 !important;
+}
+
+.logout-page {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 40px 20px;
+}
+
+.logout-card {
+    width: 460px;
+    max-width: 100%;
+    background: #080808;
+    border: 1px solid #e3ad35;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
+}
+
+.logout-brand {
+    text-align: center;
+    padding: 36px 30px 28px;
+    border-bottom: 1px solid #292929;
+}
+
+.logout-brand h1 {
+    margin: 0;
+    color: #e3ad35;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 34px;
+    font-weight: 500;
+    letter-spacing: 7px;
+}
+
+.logout-brand span {
+    display: block;
+    margin-top: 12px;
+    color: #999;
+    font-size: 10px;
+    letter-spacing: 5px;
+}
+
+.logout-content {
+    text-align: center;
+    padding: 38px 35px 40px;
+}
+
+.logout-content h2 {
+    margin: 0 0 16px;
+    color: #f2f2f2;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    font-weight: 400;
+}
+
+.logout-content p {
+    margin: 0 auto 30px;
+    max-width: 350px;
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.logout-login-btn {
+    display: inline-block;
+    padding: 14px 34px;
+    background: #e3ad35;
+    color: #080808 !important;
+    text-decoration: none !important;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: all 0.25s ease;
+}
+
+.logout-login-btn:hover {
+    background: #f0c45c;
+    color: #080808 !important;
+    transform: translateY(-1px);
+}
+/* ---------- BREADCRUMBS ---------- */
+
+.breadcrumbs,
+div.breadcrumbs,
+#breadcrumbs {
+    background: #050505 !important;
+    color: #d9a83f !important;
+    border-bottom: 1px solid #d9a83f !important;
+}
+
+.breadcrumbs a,
+div.breadcrumbs a,
+#breadcrumbs a {
+    color: #d9a83f !important;
+    text-decoration: none !important;
+}
+
+.breadcrumbs a:hover,
+div.breadcrumbs a:hover,
+#breadcrumbs a:hover {
+    color: #f0c96b !important;
+}
+/* =========================================================
+   LUMÉRA — CUSTOMER ENQUIRY TABLE
+   ========================================================= */
+
+/* Main customer enquiry table */
+#result_list {
+    background: #0b0b0b !important;
+    border: 1px solid #292929 !important;
+}
+
+/* Table header */
+#result_list thead th {
+    background: #111111 !important;
+    color: #d9a83f !important;
+    border-bottom: 1px solid #d9a83f !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.8px;
+}
+
+/* Table cells */
+#result_list tbody td {
+    background: #0b0b0b !important;
+    color: #f5f5f5 !important;
+    border-bottom: 1px solid #252525 !important;
+    padding: 13px 10px !important;
+}
+
+/* Row hover */
+#result_list tbody tr:hover td {
+    background: #151515 !important;
+}
+
+/* Customer name links */
+#result_list tbody th a,
+#result_list tbody td a {
+    color: #d9a83f !important;
+}
+
+#result_list tbody th a:hover,
+#result_list tbody td a:hover {
+    color: #f0c96b !important;
+}
+
+/* Checkboxes */
+#result_list input[type="checkbox"] {
+    accent-color: #d9a83f;
+}
+
+/* Read / unread status */
+#result_list .field-is_read {
+    text-align: center;
+}
+/* =========================================================
+   LUMÉRA — LIGHT MODE
+   Uses Django's built-in theme switcher
+   ========================================================= */
+
+:root[data-theme="light"] {
+
+    --lumera-black: #f7f5ef;
+    --lumera-dark: #eeece5;
+    --lumera-card: #ffffff;
+
+    --lumera-gold: #b8860b;
+    --lumera-gold-soft: #9a7208;
+
+    --lumera-white: #222222;
+    --lumera-muted: #666666;
+
+    --lumera-border: #d8d4c8;
+}
+
+
+/* ---------- BODY ---------- */
+
+:root[data-theme="light"] body {
+    background: #f7f5ef !important;
+    color: #222222 !important;
+}
+
+
+/* ---------- HEADER ---------- */
+
+:root[data-theme="light"] #header {
+    background: #ffffff !important;
+    border-bottom: 1px solid #d8d4c8 !important;
+}
+
+:root[data-theme="light"] #branding h1,
+:root[data-theme="light"] #branding h1 a {
+    color: #a87900 !important;
+}
+
+:root[data-theme="light"] #user-tools {
+    color: #666666 !important;
+}
+
+:root[data-theme="light"] #user-tools a {
+    color: #333333 !important;
+}
+
+:root[data-theme="light"] #user-tools a:hover {
+    color: #a87900 !important;
+}
+
+
+/* ---------- MAIN CONTENT ---------- */
+
+:root[data-theme="light"] #content {
+    background: #f7f5ef !important;
+    color: #222222 !important;
+}
+
+
+/* ---------- HEADINGS ---------- */
+
+:root[data-theme="light"] h1,
+:root[data-theme="light"] h2,
+:root[data-theme="light"] h3,
+:root[data-theme="light"] h4 {
+    color: #222222 !important;
+}
+
+
+/* ---------- MODULES ---------- */
+
+:root[data-theme="light"] .module {
+    background: #ffffff !important;
+    border: 1px solid #d8d4c8 !important;
+}
+
+:root[data-theme="light"] .module h2,
+:root[data-theme="light"] .module caption {
+    background: #eeece5 !important;
+    color: #a87900 !important;
+    border-bottom: 1px solid #d8d4c8 !important;
+}
+
+:root[data-theme="light"] .module table {
+    background: #ffffff !important;
+}
+
+:root[data-theme="light"] .module th {
+    color: #a87900 !important;
+}
+
+:root[data-theme="light"] .module td,
+:root[data-theme="light"] .module th {
+    border-color: #d8d4c8 !important;
+}
+
+:root[data-theme="light"] tr:hover {
+    background: #f1eee5 !important;
+}
+
+
+/* ---------- LINKS ---------- */
+
+:root[data-theme="light"] a {
+    color: #a87900 !important;
+}
+
+:root[data-theme="light"] a:hover {
+    color: #805f00 !important;
+}
+
+
+/* ---------- BUTTONS ---------- */
+
+:root[data-theme="light"] .button,
+:root[data-theme="light"] input[type="submit"],
+:root[data-theme="light"] input[type="button"],
+:root[data-theme="light"] .submit-row input,
+:root[data-theme="light"] a.button {
+    background: #d9a83f !important;
+    color: #111111 !important;
+    border: none !important;
+}
+
+:root[data-theme="light"] .button:hover,
+:root[data-theme="light"] input[type="submit"]:hover,
+:root[data-theme="light"] input[type="button"]:hover,
+:root[data-theme="light"] .submit-row input:hover,
+:root[data-theme="light"] a.button:hover {
+    background: #c99524 !important;
+    color: #111111 !important;
+}
+
+
+/* ---------- FORM FIELDS ---------- */
+
+:root[data-theme="light"] input,
+:root[data-theme="light"] textarea,
+:root[data-theme="light"] select {
+    background: #ffffff !important;
+    color: #222222 !important;
+    border: 1px solid #cfc9ba !important;
+}
+
+:root[data-theme="light"] input:focus,
+:root[data-theme="light"] textarea:focus,
+:root[data-theme="light"] select:focus {
+    border-color: #b8860b !important;
+}
+
+
+/* ---------- SIDEBAR ---------- */
+
+:root[data-theme="light"] #nav-sidebar {
+    background: #ffffff !important;
+    border-right: 1px solid #d8d4c8 !important;
+}
+
+:root[data-theme="light"] #nav-sidebar a {
+    color: #333333 !important;
+}
+
+:root[data-theme="light"] #nav-sidebar a:hover {
+    color: #a87900 !important;
+    background: #f1eee5 !important;
+}
+
+
+/* ---------- BREADCRUMBS ---------- */
+
+:root[data-theme="light"] .breadcrumbs,
+:root[data-theme="light"] div.breadcrumbs,
+:root[data-theme="light"] #breadcrumbs {
+    background: #ffffff !important;
+    color: #a87900 !important;
+    border-bottom: 1px solid #d9a83f !important;
+}
+
+:root[data-theme="light"] .breadcrumbs a,
+:root[data-theme="light"] div.breadcrumbs a,
+:root[data-theme="light"] #breadcrumbs a {
+    color: #a87900 !important;
+}
+
+
+/* ---------- ADMIN TABLE ---------- */
+
+:root[data-theme="light"] #content-main .module,
+:root[data-theme="light"] #content-main .module table,
+:root[data-theme="light"] #content-main .module tbody,
+:root[data-theme="light"] #content-main .module tr,
+:root[data-theme="light"] #content-main .module td,
+:root[data-theme="light"] #content-main .module th {
+    background: #ffffff !important;
+    color: #222222 !important;
+}
+
+:root[data-theme="light"] #content-main .module tr:hover {
+    background: #f1eee5 !important;
+}
+
+:root[data-theme="light"] #content-main .module td,
+:root[data-theme="light"] #content-main .module th {
+    border-color: #d8d4c8 !important;
+}
+
+:root[data-theme="light"] #content-main .module td a,
+:root[data-theme="light"] #content-main .module th a {
+    color: #a87900 !important;
+}
+
+
+/* ---------- CUSTOMER ENQUIRY TABLE ---------- */
+
+:root[data-theme="light"] #result_list {
+    background: #ffffff !important;
+    border: 1px solid #d8d4c8 !important;
+}
+
+:root[data-theme="light"] #result_list thead th {
+    background: #eeece5 !important;
+    color: #a87900 !important;
+    border-bottom: 1px solid #d9a83f !important;
+}
+
+:root[data-theme="light"] #result_list tbody td {
+    background: #ffffff !important;
+    color: #222222 !important;
+    border-bottom: 1px solid #e0ddd4 !important;
+}
+
+:root[data-theme="light"] #result_list tbody tr:hover td {
+    background: #f5f2e9 !important;
+}
+
+:root[data-theme="light"] #result_list tbody th a,
+:root[data-theme="light"] #result_list tbody td a {
+    color: #a87900 !important;
+}
+
+
+/* ---------- PAGINATION ---------- */
+
+:root[data-theme="light"] .paginator {
+    background: #ffffff !important;
+    border-top: 1px solid #d8d4c8 !important;
+}
+
+
+/* ---------- MESSAGES ---------- */
+
+:root[data-theme="light"] .messagelist li {
+    background: #ffffff !important;
+    border-left: 3px solid #d9a83f !important;
+    color: #222222 !important;
+}
+
+
+/* ---------- LOGOUT DIALOG ---------- */
+
+:root[data-theme="light"] .logout-modal {
+    background: rgba(0, 0, 0, 0.35) !important;
+}
+
+:root[data-theme="light"] .logout-dialog {
+    background: #ffffff !important;
+    border: 1px solid #d9a83f !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2) !important;
+}
+
+:root[data-theme="light"] .logout-dialog h2 {
+    color: #a87900 !important;
+}
+
+:root[data-theme="light"] .logout-dialog p {
+    color: #444444 !important;
+}
+
+
+/* ---------- LOGGED OUT PAGE ---------- */
+
+:root[data-theme="light"] .logout-card {
+    background: #ffffff !important;
+    border: 1px solid #d9a83f !important;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15) !important;
+}
+
+:root[data-theme="light"] .logout-brand {
+    border-bottom: 1px solid #e0ddd4 !important;
+}
+
+:root[data-theme="light"] .logout-content h2 {
+    color: #222222 !important;
+}
+
+:root[data-theme="light"] .logout-content p {
+    color: #555555 !important;
+}
+/* =========================================================
+   LUMÉRA ADMIN — RESPONSIVE FIX
+   ========================================================= */
+
+/* Prevent horizontal overflow */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Main admin container */
+#container {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Main content */
+#content {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Dashboard content */
+#content-main {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Admin modules */
+#content-main .module {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Tables should scroll instead of breaking mobile layout */
+#content-main .module table {
+    width: 100%;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    #header {
+        padding: 14px 18px !important;
+    }
+
+    #branding h1,
+    #branding h1 a {
+        font-size: 20px !important;
+        letter-spacing: 3px !important;
+    }
+
+    #user-tools {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    #content {
+        padding: 20px 16px !important;
+    }
+
+    #content-main {
+        width: 100% !important;
+    }
+
+    .module {
+        width: 100% !important;
+    }
+
+    .module table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .breadcrumbs {
+        padding: 10px 16px !important;
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    /* Header */
+    #header {
+        padding: 12px 14px !important;
+    }
+
+    #branding {
+        width: 100%;
+        text-align: center;
+    }
+
+    #branding h1,
+    #branding h1 a {
+        font-size: 19px !important;
+        letter-spacing: 3px !important;
+    }
+
+    /* User tools */
+    #user-tools {
+        width: 100%;
+        text-align: center;
+        margin-top: 8px;
+        font-size: 10px;
+    }
+
+    #user-tools a {
+        font-size: 10px !important;
+    }
+
+    /* Content */
+    #content {
+        padding: 16px 12px !important;
+    }
+
+    #content h1 {
+        font-size: 22px !important;
+        margin-bottom: 18px !important;
+    }
+
+    #content h2 {
+        font-size: 17px !important;
+    }
+
+    #content h3 {
+        font-size: 15px !important;
+    }
+
+    /* Breadcrumbs */
+    .breadcrumbs,
+    div.breadcrumbs,
+    #breadcrumbs {
+        padding: 9px 12px !important;
+        font-size: 11px !important;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Modules */
+    #content-main .module {
+        margin-bottom: 16px;
+        border-radius: 3px;
+    }
+
+    #content-main .module h2,
+    #content-main .module caption {
+        padding: 10px 12px !important;
+        font-size: 13px !important;
+    }
+
+    /* Tables */
+    #content-main .module table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #content-main .module th,
+    #content-main .module td {
+        white-space: nowrap;
+        font-size: 12px !important;
+        padding: 9px 8px !important;
+    }
+
+    /* Form fields */
+    input,
+    textarea,
+    select {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Buttons */
+    .button,
+    input[type="submit"],
+    input[type="button"],
+    a.button {
+        max-width: 100%;
+    }
+
+    /* Pagination */
+    .paginator {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    #header {
+        padding: 10px 10px !important;
+    }
+
+    #branding h1,
+    #branding h1 a {
+        font-size: 17px !important;
+        letter-spacing: 2px !important;
+    }
+
+    #content {
+        padding: 12px 9px !important;
+    }
+
+    #content h1 {
+        font-size: 20px !important;
+    }
+
+    #user-tools {
+        font-size: 9px;
+    }
+
+}
+/* =========================================================
+   LUMÉRA ADMIN — MOBILE RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Prevent horizontal overflow */
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Main admin wrapper */
+    #container {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Header */
+    #header {
+        width: 100%;
+        min-height: auto;
+        padding: 14px 16px;
+        box-sizing: border-box;
+    }
+
+    /* Luméra branding */
+    #branding {
+        width: 100%;
+        text-align: center;
+    }
+
+    #branding h1 {
+        margin: 0;
+        font-size: 24px;
+    }
+
+    /* User tools */
+    #user-tools {
+        float: none;
+        width: 100%;
+        text-align: center;
+        margin-top: 8px;
+        font-size: 11px;
+        line-height: 1.7;
+    }
+
+    /* Breadcrumbs */
+    div.breadcrumbs {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+
+    /* Main content */
+    #content-start {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #content {
+        width: 100%;
+        margin: 0;
+        padding: 20px 15px;
+        box-sizing: border-box;
+    }
+
+    /* =====================================================
+       ADMIN SIDEBAR
+       ===================================================== */
+
+    #nav-sidebar {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        float: none;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    #nav-sidebar + #content-start {
+        margin-left: 0;
+    }
+
+    /* Sidebar search */
+    #nav-filter {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Sidebar modules */
+    #nav-sidebar .module {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Sidebar links */
+    #nav-sidebar .module th,
+    #nav-sidebar .module td {
+        padding: 10px 12px;
+    }
+
+    /* =====================================================
+       PAGE TITLE
+       ===================================================== */
+
+    #content h1 {
+        font-size: 22px;
+        margin: 0 0 20px;
+        line-height: 1.3;
+    }
+
+    /* =====================================================
+       TABLES
+       ===================================================== */
+
+    .results {
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+    }
+
+    #result_list {
+        min-width: 600px;
+    }
+
+    /* =====================================================
+       FORMS
+       ===================================================== */
+
+    .form-row {
+        display: block;
+    }
+
+    .form-row > div {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    input,
+    select,
+    textarea {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* =====================================================
+       BUTTONS
+       ===================================================== */
+
+    .submit-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .submit-row input,
+    .submit-row button {
+        max-width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    #header {
+        padding: 12px;
+    }
+
+    #branding h1 {
+        font-size: 22px;
+    }
+
+    #user-tools {
+        font-size: 10px;
+    }
+
+    div.breadcrumbs {
+        font-size: 12px;
+        padding: 9px 12px;
+    }
+
+    #content {
+        padding: 16px 12px;
+    }
+
+    #content h1 {
+        font-size: 20px;
+    }
+
+}
+/* =========================================================
+   LUMÉRA ADMIN — MOBILE FIX
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    #container {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* -------------------------
+       HEADER
+       ------------------------- */
+
+    #header {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 14px 15px;
+    }
+
+    #branding {
+        width: auto;
+    }
+
+    #branding h1 {
+        margin: 0;
+        font-size: 24px;
+    }
+
+    #user-tools {
+        font-size: 10px;
+        line-height: 1.6;
+    }
+
+
+    /* -------------------------
+       BREADCRUMBS
+       ------------------------- */
+
+    div.breadcrumbs {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px 14px;
+        font-size: 12px;
+    }
+
+
+    /* -------------------------
+       MOBILE NAVIGATION
+       ------------------------- */
+
+    #nav-sidebar {
+        position: relative !important;
+        display: block !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        height: auto !important;
+        max-height: none !important;
+
+        float: none !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        overflow: visible !important;
+
+        box-sizing: border-box;
+    }
+
+    /* Search box */
+
+    #nav-sidebar #nav-filter {
+        width: 100%;
+        box-sizing: border-box;
+        height: 40px;
+        padding: 8px 12px;
+    }
+
+
+    /* Sidebar modules */
+
+    #nav-sidebar .module {
+        width: 100% !important;
+        box-sizing: border-box;
+        margin: 0 !important;
+    }
+
+    #nav-sidebar .module caption {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px 12px;
+    }
+
+    #nav-sidebar .module th,
+    #nav-sidebar .module td {
+        padding: 10px 12px;
+        box-sizing: border-box;
+    }
+
+
+    /* -------------------------
+       MAIN CONTENT
+       ------------------------- */
+
+    #content-start {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #content {
+        width: 100% !important;
+        box-sizing: border-box;
+
+        margin: 0 !important;
+        padding: 20px 15px !important;
+    }
+
+    #content h1 {
+        font-size: 21px;
+        margin: 0 0 20px;
+    }
+
+
+    /* -------------------------
+       ADMIN INDEX MODULES
+       ------------------------- */
+
+    .dashboard .module {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+    }
+
+    .dashboard .module table {
+        width: 100%;
+    }
+
+
+    /* -------------------------
+       TABLES
+       ------------------------- */
+
+    .results {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    #result_list {
+        min-width: 600px;
+    }
+
+
+    /* -------------------------
+       FORMS
+       ------------------------- */
+
+    .form-row {
+        display: block;
+    }
+
+    .form-row > div {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    input,
+    select,
+    textarea {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+
+    /* -------------------------
+       BUTTONS
+       ------------------------- */
+
+    .submit-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+}
+/* =========================================================
+   LUMÉRA ADMIN — MOBILE RESPONSIVE FIX
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden !important;
+    }
+
+    #container {
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+    }
+
+
+    /* =========================
+       HEADER
+       ========================= */
+
+    #header {
+        width: 100% !important;
+        box-sizing: border-box;
+        padding: 14px 15px !important;
+    }
+
+    #branding {
+        width: auto !important;
+    }
+
+    #branding h1 {
+        margin: 0 !important;
+        font-size: 24px !important;
+    }
+
+    #user-tools {
+        font-size: 10px !important;
+        line-height: 1.5;
+    }
+
+
+    /* =========================
+       BREADCRUMBS
+       ========================= */
+
+    div.breadcrumbs {
+        width: 100% !important;
+        box-sizing: border-box;
+        padding: 10px 14px !important;
+        font-size: 12px;
+    }
+
+
+    /* =========================
+       MAIN LAYOUT
+       ========================= */
+
+    #main {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #main.shifted {
+        margin-left: 0 !important;
+    }
+
+    main#content-start {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #content {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        /* THIS IS THE IMPORTANT FIX */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        padding: 20px 15px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #content.colM {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+    }
+
+
+    /* =========================
+       PAGE TITLE
+       ========================= */
+
+    .titles-and-tools {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    #content h1 {
+        width: 100% !important;
+        box-sizing: border-box;
+
+        margin: 0 0 20px !important;
+
+        font-size: 21px !important;
+        line-height: 1.3 !important;
+
+        word-break: normal;
+    }
+
+
+    /* =========================
+       NAV SIDEBAR
+       ========================= */
+
+    #nav-sidebar {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        position: relative !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        float: none !important;
+
+        box-sizing: border-box;
+    }
+
+    #nav-sidebar .module {
+        width: 100% !important;
+        box-sizing: border-box;
+        margin: 0 !important;
+    }
+
+    #nav-sidebar .module table {
+        width: 100% !important;
+    }
+
+    #nav-sidebar #nav-filter {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+
+    /* =========================
+       DASHBOARD
+       ========================= */
+
+    .dashboard {
+        width: 100% !important;
+    }
+
+    .dashboard .module {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+
+    /* =========================
+       TABLES
+       ========================= */
+
+    .results {
+        width: 100% !important;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+
+    /* =========================
+       FORMS
+       ========================= */
+
+    .form-row {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    input,
+    select,
+    textarea {
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+}
+/* =========================================================
+   LUMÉRA ADMIN - FINAL MOBILE CONTENT FIX
+   ========================================================= */
+
+@media screen and (max-width: 767px) {
+
+    html,
+    body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    #container {
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* --------------------------------
+       HEADER
+       -------------------------------- */
+
+    #header {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 14px 15px !important;
+    }
+
+    #branding {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #branding h1 {
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 24px !important;
+    }
+
+
+    /* --------------------------------
+       BREADCRUMBS
+       -------------------------------- */
+
+    div.breadcrumbs {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 10px 14px !important;
+    }
+
+
+    /* --------------------------------
+       MAIN
+       -------------------------------- */
+
+    #main {
+        width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #main.shifted {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+
+
+    /* --------------------------------
+       CONTENT - MOST IMPORTANT
+       -------------------------------- */
+
+    #content-start {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #content {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 20px 15px !important;
+
+        box-sizing: border-box !important;
+
+        float: none !important;
+    }
+
+    #content.colM {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 20px 15px !important;
+
+        float: none !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* --------------------------------
+       TITLE AREA
+       -------------------------------- */
+
+    #content .titles-and-tools {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        box-sizing: border-box !important;
+
+        display: block !important;
+    }
+
+    #content .titles {
+        width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #content h1 {
+        width: 100% !important;
+
+        margin: 0 0 20px 0 !important;
+        padding: 0 !important;
+
+        font-size: 21px !important;
+        line-height: 1.3 !important;
+
+        text-align: left !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* --------------------------------
+       CLEAR FLOATS
+       -------------------------------- */
+
+    #content > .clear,
+    #content .clear {
+        clear: both !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+
+    /* --------------------------------
+       NAV SIDEBAR
+       -------------------------------- */
+
+    #nav-sidebar {
+        display: none !important;
+    }
+
+
+    /* --------------------------------
+       DASHBOARD
+       -------------------------------- */
+
+    .dashboard {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .dashboard .module {
+        width: 100% !important;
+        margin: 0 0 15px 0 !important;
+        box-sizing: border-box !important;
+    }
+
+
+    /* --------------------------------
+       TABLES
+       -------------------------------- */
+
+    .results {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: auto !important;
+    }
+
+
+    /* --------------------------------
+       FORMS
+       -------------------------------- */
+
+    .form-row {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    input,
+    select,
+    textarea {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+}
+/* =========================================================
+   LUMÉRA ADMIN — FINAL MOBILE VERSION
+   ========================================================= */
+
+@media screen and (max-width: 767px) {
+
+    html,
+    body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    #container {
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* =========================
+       HEADER
+       ========================= */
+
+    #header {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 14px 15px !important;
+    }
+
+    #branding {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #branding h1 {
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 24px !important;
+    }
+
+    #user-tools {
+        font-size: 10px !important;
+        line-height: 1.5 !important;
+    }
+
+
+    /* =========================
+       BREADCRUMBS
+       ========================= */
+
+    div.breadcrumbs {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 10px 14px !important;
+        font-size: 12px !important;
+    }
+
+
+    /* =========================
+       MAIN AREA
+       ========================= */
+
+    #main {
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    #main.shifted {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    #content-start {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+
+    /* =========================
+       MOBILE ADMIN NAVIGATION
+       ========================= */
+
+    #nav-sidebar {
+        display: block !important;
+
+        position: relative !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        height: auto !important;
+        max-height: none !important;
+
+        float: none !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        box-sizing: border-box !important;
+
+        overflow: visible !important;
+    }
+
+    #nav-sidebar .module {
+        width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    #nav-sidebar .module table {
+        width: 100% !important;
+    }
+
+    #nav-sidebar #nav-filter {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+
+    /* =========================
+       CONTENT
+       ========================= */
+
+    #content {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 20px 15px !important;
+
+        float: none !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #content.colM {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 20px 15px !important;
+
+        float: none !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* =========================
+       TITLE
+       ========================= */
+
+    .titles-and-tools {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .titles {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #content h1 {
+        width: 100% !important;
+
+        margin: 0 0 20px 0 !important;
+        padding: 0 !important;
+
+        font-size: 21px !important;
+        line-height: 1.3 !important;
+
+        text-align: left !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* =========================
+       DASHBOARD
+       ========================= */
+
+    .dashboard {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .dashboard .module {
+        width: 100% !important;
+        margin: 0 0 15px 0 !important;
+        box-sizing: border-box !important;
+    }
+
+
+    /* =========================
+       TABLES
+       ========================= */
+
+    .results {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: auto !important;
+    }
+
+
+    /* =========================
+       FORMS
+       ========================= */
+
+    .form-row {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    input,
+    select,
+    textarea {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
+/* Extra mobile refinements */
+@media (max-width: 480px) {
+
+    /* Sidebar: collapse into top bar */
+    #nav-sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 220px;
+        height: 100%;
+        transition: left 0.3s ease;
+        z-index: 9999;
+    }
+
+    #nav-sidebar.show {
+        left: 0;
+    }
+
+    /* Add hamburger toggle */
+    #toggle-nav {
+        display: block;
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        font-size: 20px;
+        color: var(--lumera-gold);
+        cursor: pointer;
+    }
+
+    /* Tables: scrollable */
+    .module table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Forms: stack labels above inputs */
+    .form-row {
+        display: block;
+        margin-bottom: 14px;
+    }
+
+    .form-row label {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 13px;
+    }
+
+    .form-row input,
+    .form-row select,
+    .form-row textarea {
+        width: 100% !important;
+    }
+
+    /* Buttons: full width for touch */
+    .submit-row input[type="submit"],
+    .button {
+        width: 100%;
+        margin-top: 10px;
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+@media (max-width: 480px) {
+  #nav-sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 220px;
+    height: 100%;
+    transition: left 0.3s ease;
+    z-index: 9999;
+  }
+  #nav-sidebar.show {
+    left: 0;
+  }
+  #toggle-nav {
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-size: 20px;
+    color: var(--lumera-gold);
+    cursor: pointer;
+  }
+}
+@media (max-width: 480px) {
+  .module table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media (max-width: 480px) {
+  .form-row {
+    display: block;
+    margin-bottom: 14px;
+  }
+  .form-row label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+  }
+  .form-row input,
+  .form-row select,
+  .form-row textarea {
+    width: 100% !important;
+  }
+}
+@media (max-width: 480px) {
+  .submit-row input[type="submit"],
+  .button {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+/* =========================================================
+   LUMÉRA THEME TOGGLE
+   ========================================================= */
+
+.theme-toggle {
+    background: var(--lumera-gold) !important;
+    color: #080808 !important;
+
+    border: 1px solid var(--lumera-gold) !important;
+    border-radius: 50% !important;
+
+    width: 36px !important;
+    height: 36px !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    cursor: pointer !important;
+
+    box-shadow: none !important;
+}
+
+.theme-toggle:hover {
+    background: var(--lumera-gold-light) !important;
+    color: #080808 !important;
+
+    border-color: var(--lumera-gold-light) !important;
+}
+
+/* Remove Django's blue focus/outline */
+
+.theme-toggle:focus,
+.theme-toggle:focus-visible {
+    outline: none !important;
+
+    box-shadow: 0 0 0 2px rgba(217, 168, 63, 0.25) !important;
+}
+
+
+/* =========================================================
+   LIGHT THEME
+   ========================================================= */
+
+html[data-theme="light"] .theme-toggle {
+    background: var(--lumera-gold) !important;
+    color: #080808 !important;
+
+    border-color: var(--lumera-gold) !important;
+}
+
+
+/* =========================================================
+   DARK THEME
+   ========================================================= */
+
+html[data-theme="dark"] .theme-toggle {
+    background: var(--lumera-gold) !important;
+    color: #080808 !important;
+
+    border-color: var(--lumera-gold) !important;
+}
+/* =====================================================
+   LUMÉRA THEME TOGGLE
+   Keep Django's original size/layout
+   Only change its colors
+   ===================================================== */
+
+.theme-toggle {
+    background: transparent !important;
+    color: #d4af37 !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus,
+.theme-toggle:focus-visible,
+.theme-toggle:active {
+    background: transparent !important;
+    color: #e0b94f !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Keep Django's original icon shape */
+.theme-toggle svg {
+    color: #d4af37 !important;
+}
+
+/* Prevent our CSS from changing the icon dimensions */
+.theme-toggle svg,
+.theme-toggle img {
+    width: auto !important;
+    height: auto !important;
+}
+/* =====================================================
+   SMALL LUMÉRA THEME TOGGLE
+   ===================================================== */
+
+.theme-toggle {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    min-height: 28px !important;
+
+    padding: 3px !important;
+    margin: 0 !important;
+
+    background: transparent !important;
+    color: #d4af37 !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 50% !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus,
+.theme-toggle:active {
+    background: transparent !important;
+    color: #e0b94f !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.theme-toggle svg {
+    width: 17px !important;
+    height: 17px !important;
+    color: #d4af37 !important;
+}
+/* =========================================================
+   FINAL FIX — DJANGO ADMIN MOBILE CONTENT
+   ========================================================= */
+
+@media screen and (max-width: 767px) {
+
+    /* Stop Django's desktop shifted layout */
+    #main,
+    .main,
+    .main.shifted {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* THIS is the important part */
+    #content-start,
+    .main.shifted #content-start,
+    .main > #content-start {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Remove Django's desktop column positioning */
+    #content,
+    #content.colM,
+    .main.shifted #content,
+    .main > #content {
+        float: none !important;
+        position: static !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        padding: 20px 15px !important;
+
+        box-sizing: border-box !important;
+
+        overflow: visible !important;
+    }
+
+    /* Content inside the column */
+    #content-main {
+        float: none !important;
+        position: static !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /* Fix title */
+    #content h1 {
+        display: block !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 0 20px 0 !important;
+        padding: 0 !important;
+
+        font-size: 1.35rem !important;
+        line-height: 1.4 !important;
+
+        text-align: left !important;
+
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /* Fix title wrapper */
+    .titles-and-tools {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        display: block !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+    .titles {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /* Don't let sidebar reserve desktop space */
+    #nav-sidebar {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 480px) {
+
+    #content,
+    #content.colM {
+        padding: 18px 14px !important;
+    }
+
+    #content h1 {
+        font-size: 1.25rem !important;
+        line-height: 1.35 !important;
+    }
+}
+/* =========================================================
+   LUMÉRA — FINAL MOBILE OVERRIDE
+   DO NOT CHANGE ANYTHING ABOVE
+   ========================================================= */
+
+@media screen and (max-width: 767px) {
+
+    html,
+    body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    /* ===== REMOVE DJANGO DESKTOP SHIFT ===== */
+
+    #main,
+    #main.shifted,
+    main.main,
+    main.main.shifted {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        margin-left: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* ===== CONTENT START ===== */
+
+    #content-start,
+    main#content-start,
+    .main.shifted #content-start {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        margin-left: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* ===== ACTUAL CONTENT COLUMN ===== */
+
+    #content,
+    #content.colM,
+    main#content-start #content,
+    .main.shifted #content,
+    .main.shifted > #content {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        float: none !important;
+        position: static !important;
+
+        margin: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        padding: 18px 14px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /* ===== CONTENT INNER ===== */
+
+    #content-main {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        float: none !important;
+        position: static !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /* ===== TITLE ===== */
+
+    #content .titles-and-tools,
+    #content .titles {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        display: block !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #content h1 {
+        display: block !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 0 18px 0 !important;
+        padding: 0 !important;
+
+        font-size: 21px !important;
+        line-height: 1.35 !important;
+
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+
+        text-align: left !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /* ===== SIDEBAR MUST NOT PUSH CONTENT ===== */
+
+    #nav-sidebar {
+        position: absolute !important;
+        left: -9999px !important;
+
+        width: 0 !important;
+        max-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        overflow: hidden !important;
+    }
+
+    /* ===== BREADCRUMBS ===== */
+
+    div.breadcrumbs,
+    .breadcrumbs,
+    #breadcrumbs {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+        box-sizing: border-box !important;
+
+        padding: 10px 14px !important;
+
+        white-space: nowrap !important;
+        overflow-x: auto !important;
+    }
+
+    /* ===== DASHBOARD MODULES ===== */
+
+    .dashboard,
+    .dashboard .module,
+    #content-main .module {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /* ===== TABLES ===== */
+
+    .results {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        overflow-x: auto !important;
+        box-sizing: border-box !important;
+    }
+
+    /* ===== FORMS ===== */
+
+    .form-row {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        box-sizing: border-box !important;
+    }
+
+    input,
+    select,
+    textarea {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
+
+
+/* =========================================================
+   LUMÉRA — SMALL THEME TOGGLE
+   GOLD ONLY — NO BLUE
+   ========================================================= */
+
+.theme-toggle {
+    width: 28px !important;
+    height: 28px !important;
+
+    min-width: 28px !important;
+    min-height: 28px !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    background: transparent !important;
+
+    color: #d9a83f !important;
+
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+
+    border-radius: 50% !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    cursor: pointer !important;
+}
+
+/* REMOVE BLUE ON EVERY STATE */
+
+.theme-toggle:hover,
+.theme-toggle:focus,
+.theme-toggle:focus-visible,
+.theme-toggle:active {
+    background: transparent !important;
+    color: #e5b653 !important;
+
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* ICON */
+
+.theme-toggle svg {
+    width: 17px !important;
+    height: 17px !important;
+
+    color: #d9a83f !important;
+    fill: currentColor !important;
+
+    stroke: currentColor !important;
+}
+
+.theme-toggle:hover svg,
+.theme-toggle:focus svg,
+.theme-toggle:active svg {
+    color: #e5b653 !important;
+}
+
+
+/* =========================================================
+   LIGHT THEME
+   ========================================================= */
+
+html[data-theme="light"] .theme-toggle,
+:root[data-theme="light"] .theme-toggle {
+    background: transparent !important;
+    color: #b8860b !important;
+}
+
+html[data-theme="light"] .theme-toggle svg,
+:root[data-theme="light"] .theme-toggle svg {
+    color: #b8860b !important;
+}
+
+
+/* =========================================================
+   DARK THEME
+   ========================================================= */
+
+html[data-theme="dark"] .theme-toggle,
+:root[data-theme="dark"] .theme-toggle {
+    background: transparent !important;
+    color: #d9a83f !important;
+}
+
+html[data-theme="dark"] .theme-toggle svg,
+:root[data-theme="dark"] .theme-toggle svg {
+    color: #d9a83f !important;
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 480px) {
+
+    #content,
+    #content.colM {
+        padding: 16px 12px !important;
+    }
+
+    #content h1 {
+        font-size: 20px !important;
+        line-height: 1.35 !important;
+    }
+
+    #header {
+        padding: 12px 14px !important;
+    }
+
+    #branding h1,
+    #branding h1 a {
+        font-size: 21px !important;
+        letter-spacing: 3px !important;
+    }
+
+    #user-tools {
+        font-size: 10px !important;
+    }
+}
+/* =========================================================
+   LUMÉRA ADMIN — KEEP SIDEBAR VISIBLE ON MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    /* Keep Django admin sidebar visible */
+    #nav-sidebar {
+        display: block !important;
+        visibility: visible !important;
+        position: relative !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+        transform: none !important;
+        left: 0 !important;
+        right: auto !important;
+        margin: 0 !important;
+    }
+
+    /* Prevent Django's mobile layout from hiding it */
+    #nav-sidebar.hidden {
+        display: block !important;
+    }
+
+    /* Sidebar content */
+    #nav-sidebar .module {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    /* Search box */
+    #nav-sidebar input[type="search"] {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Main content comes BELOW sidebar */
+    #content-start,
+    #content {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Sidebar toggle button can stay hidden */
+    #nav-sidebar + * {
+        margin-left: 0 !important;
+    }
+
+    /* Make the sidebar model links comfortable on phone */
+    #nav-sidebar a {
+        display: block;
+        padding: 10px 14px !important;
+        box-sizing: border-box;
+    }
+
+    /* Keep section headings visible */
+    #nav-sidebar .module caption,
+    #nav-sidebar .module h2 {
+        display: block !important;
+    }
+}
+/* =========================================================
+   LUMÉRA ADMIN — MOBILE CONTENT BELOW SIDEBAR
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    /* Stack sidebar and main content vertically */
+    #main {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Sidebar stays full width */
+    #nav-sidebar {
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        left: 0 !important;
+        right: auto !important;
+        float: none !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Main content goes BELOW sidebar */
+    #content-start {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 20px 15px !important;
+        box-sizing: border-box !important;
+        float: none !important;
+    }
+
+    /* Stop the heading from being squeezed */
+    #content-start .colM,
+    #content-start #content {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Administration heading */
+    #content-start h1 {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 0 20px 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+        word-break: normal !important;
+    }
+}
+/* =========================================================
+   LUMÉRA ADMIN — FINAL MOBILE SIDEBAR STYLING
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    /* -----------------------------------------------------
+       REMOVE "LUMÉRA ADMINISTRATION" HEADING
+       ----------------------------------------------------- */
+
+    #content-start h1 {
+        display: none !important;
+    }
+
+
+    /* -----------------------------------------------------
+       LUMÉRA GOLD FOR SIDEBAR SECTION HEADINGS
+       ----------------------------------------------------- */
+
+    #nav-sidebar .module caption {
+        color: #d4af37 !important;
+        background: #0a0a0a !important;
+        font-weight: 500 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    #nav-sidebar .module caption a {
+        color: #d4af37 !important;
+    }
+
+
+    /* -----------------------------------------------------
+       IF DJANGO USES H2 FOR SECTION HEADINGS
+       ----------------------------------------------------- */
+
+    #nav-sidebar .module h2 {
+        color: #d4af37 !important;
+        background: #0a0a0a !important;
+        font-weight: 500 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+    }
+
+
+    /* -----------------------------------------------------
+       KEEP SIDEBAR FULL WIDTH
+       ----------------------------------------------------- */
+
+    #nav-sidebar {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        position: relative !important;
+        left: 0 !important;
+        right: auto !important;
+        float: none !important;
+    }
+
+
+    /* -----------------------------------------------------
+       SIDEBAR ITEMS
+       ----------------------------------------------------- */
+
+    #nav-sidebar .module {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+
+    /* -----------------------------------------------------
+       MAIN CONTENT BELOW SIDEBAR
+       ----------------------------------------------------- */
+
+    #content-start,
+    #content-start .colM,
+    #content-start #content {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+}
+@media (max-width: 767px) {
+
+    #nav-sidebar .module caption,
+    #nav-sidebar .module caption a,
+    #nav-sidebar .module h2 {
+        font-size: 16px !important;
+        color: #d4af37 !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.8px !important;
+    }
+
+}
+/* =========================================
+   LUMÉRA ADMIN - SECTION HEADINGS
+   ========================================= */
+
+@media (max-width: 767px) {
+
+    /* AUTHENTICATION AND AUTHORIZATION + CORE */
+    #content-main .module h2,
+    #content-main .module caption,
+    #content-main .module caption a {
+        font-size: 1.7rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.5px !important;
+        line-height: 1.4 !important;
+    }
+
+    /* Make the section headings Luméra gold */
+    #content-main .module h2,
+    #content-main .module caption,
+    #content-main .module caption a {
+        color: #d4af37 !important;
+    }
+
+}
+/* =========================================
+   LUMÉRA LOGO - BIGGER
+   ========================================= */
+
+#site-name,
+#site-name a {
+    font-size: 4rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 4px !important;
+    line-height: 1.2 !important;
+    color: #d4af37 !important;
+    text-decoration: none !important;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+
+    #site-name,
+    #site-name a {
+        font-size: 1.8rem !important;
+        letter-spacing: 3px !important;
+    }
+
+}
+/* =========================================
+   LUMÉRA LOGO - FINAL
+   ========================================= */
+
+#header #branding #site-name,
+#header #branding #site-name a,
+#branding #site-name,
+#branding #site-name a {
+    font-size: 2.2rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 4px !important;
+    line-height: 1.2 !important;
+    color: #d4af37 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-decoration: none !important;
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+
+    #header #branding #site-name,
+    #header #branding #site-name a,
+    #branding #site-name,
+    #branding #site-name a {
+        font-size: 2rem !important;
+        letter-spacing: 3px !important;
+        line-height: 1.2 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+}
+/* =========================================
+   MOVE LUMÉRA LOGO TO LEFT
+   ========================================= */
+
+#header #branding,
+#branding {
+    text-align: left !important;
+    justify-content: flex-start !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+#header #branding #site-name,
+#branding #site-name {
+    text-align: left !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+#header #branding #site-name a,
+#branding #site-name a {
+    text-align: left !important;
+    display: block !important;
+}
+/* =========================================
+   LUMÉRA ADMIN SECTION HEADINGS
+   AUTHENTICATION + CORE
+   ========================================= */
+
+#nav-sidebar .module caption,
+#nav-sidebar .module caption a,
+#nav-sidebar .module h2,
+#nav-sidebar .module h2 a {
+    color: #d4af37 !important;
+}
+
+
+/* MOBILE */
+@media (max-width: 767px) {
+
+    #nav-sidebar .module caption,
+    #nav-sidebar .module caption a,
+    #nav-sidebar .module h2,
+    #nav-sidebar .module h2 a {
+        color: #d4af37 !important;
+    }
+
+}
+/* =====================================================
+   LUMÉRA SIDEBAR SECTION HEADINGS
+   AUTHENTICATION AND AUTHORIZATION + CORE
+   ===================================================== */
+
+#nav-sidebar .module caption {
+    color: #d4af37 !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+}
+
+#nav-sidebar .module caption a {
+    color: #d4af37 !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+}
+
+
+/* Make sure it also works on mobile */
+
+@media (max-width: 767px) {
+
+    #nav-sidebar .module caption {
+        color: #d4af37 !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+    }
+
+    #nav-sidebar .module caption a {
+        color: #d4af37 !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+    }
+
+}
+/* =========================================================
+   LUMÉRA GOLD SIDEBAR SECTION HEADINGS
+   ========================================================= */
+
+/* Authentication and Authorization + Core */
+#nav-sidebar table.module > caption,
+#nav-sidebar table.module > caption a,
+#nav-sidebar table.module > caption a:link,
+#nav-sidebar table.module > caption a:visited {
+    color: #d4af37 !important;
+}
+
+
+/* Keep headings clearly visible on dark theme */
+html[data-theme="dark"] #nav-sidebar table.module > caption,
+html[data-theme="dark"] #nav-sidebar table.module > caption a,
+html[data-theme="dark"] #nav-sidebar table.module > caption a:link,
+html[data-theme="dark"] #nav-sidebar table.module > caption a:visited {
+    color: #d4af37 !important;
+}
+
+
+/* Keep headings clearly visible on light theme */
+html[data-theme="light"] #nav-sidebar table.module > caption,
+html[data-theme="light"] #nav-sidebar table.module > caption a,
+html[data-theme="light"] #nav-sidebar table.module > caption a:link,
+html[data-theme="light"] #nav-sidebar table.module > caption a:visited {
+    color: #d4af37 !important;
+}
+
+
+/* Mobile */
+@media (max-width: 767px) {
+
+    #nav-sidebar table.module > caption,
+    #nav-sidebar table.module > caption a,
+    #nav-sidebar table.module > caption a:link,
+    #nav-sidebar table.module > caption a:visited {
+        color: #d4af37 !important;
+    }
+
+}
+@media (max-width: 767px) {
+
+    #nav-sidebar .module caption,
+    #nav-sidebar .module caption a {
+        background: white !important;
+        color: #d4af37 !important;
+    }
+
+}
+
+
+
+/* Mobile */
+@media (max-width: 767px) {
+
+    #nav-sidebar .module caption,
+    #nav-sidebar .module caption a {
+        background: #d4af37 !important;
+        color: #111111 !important;
+    }
+
+}
+/* =========================================================
+   LUMÉRA - MOBILE SECTION HEADINGS
+   Keep desktop completely unchanged
+   ========================================================= */
+
+@media screen and (max-width: 767px) {
+
+    /* AUTHENTICATION AND AUTHORIZATION */
+    #nav-sidebar .module caption,
+    #nav-sidebar .module h2 {
+        background-color: #ffffff !important;
+        color: #c99a22 !important;
+        border-color: #c99a22 !important;
+    }
+
+    /* CORE */
+    #nav-sidebar .module caption,
+    #nav-sidebar .module h2 {
+        background-color: #ffffff !important;
+        color: #c99a22 !important;
+    }
+
+    /* Make sure links inside headings don't turn dark */
+    #nav-sidebar .module caption a,
+    #nav-sidebar .module h2 a {
+        background-color: #ffffff !important;
+        color: #c99a22 !important;
+    }
+
+}
+/* =========================================================
+   MOBILE ONLY — LUMÉRA APP SECTION HEADINGS
+   ========================================================= */
+
+@media screen and (max-width: 767px) {
+
+    /* AUTHENTICATION AND AUTHORIZATION */
+    #nav-sidebar .module:has(caption a[href*="/auth/"]) caption {
+        background: #ffffff !important;
+        color: #c99a22 !important;
+        border: 1px solid #c99a22 !important;
+    }
+
+    #nav-sidebar .module:has(caption a[href*="/auth/"]) caption a {
+        background: #ffffff !important;
+        color: #c99a22 !important;
+    }
+
+
+    /* CORE */
+    #nav-sidebar .module:has(caption a[href*="/core/"]) caption {
+        background: #ffffff !important;
+        color: #c99a22 !important;
+        border: 1px solid #c99a22 !important;
+    }
+
+    #nav-sidebar .module:has(caption a[href*="/core/"]) caption a {
+        background: #ffffff !important;
+        color: #c99a22 !important;
+    }
+
+}
+/* =========================================================
+   LUMÉRA LOGOUT — MAKE IT VISIBLE
+   ========================================================= */
+
+/* Logout form */
+#user-tools form {
+    display: inline !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Logout button */
+#user-tools form button[type="submit"] {
+    background: transparent !important;
+    color: #c99a22 !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 0 0 6px !important;
+
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: 500 !important;
+
+    cursor: pointer !important;
+    text-decoration: underline !important;
+}
+
+/* Hover */
+#user-tools form button[type="submit"]:hover {
+    color: #a77d12 !important;
+    background: transparent !important;
+}
+
+/* Make all user-tool links match Luméra */
+#user-tools a {
+    color: #c99a22 !important;
+}
+
+#user-tools a:hover {
+    color: #a77d12 !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+/* =========================================================
+   LUMÉRA MOBILE HEADER / USER TOOLS
+   ========================================================= */
+
+@media screen and (max-width: 767px) {
+
+    /* Keep the whole user area visible */
+    #user-tools {
+        color: #ffffff !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* Welcome text */
+    #user-tools {
+        font-size: 11px !important;
+    }
+
+    /* Username */
+    #user-tools strong {
+        color: #ffffff !important;
+        font-weight: 700 !important;
+    }
+
+    /* VIEW SITE / CHANGE PASSWORD / LOG OUT */
+    #user-tools a {
+        color: #c99a22 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* Logout button */
+    #user-tools form {
+        display: inline !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #user-tools form button[type="submit"] {
+        color: #c99a22 !important;
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 0 0 5px !important;
+
+        font-family: inherit !important;
+        font-size: inherit !important;
+        font-weight: 500 !important;
+
+        text-decoration: underline !important;
+        cursor: pointer !important;
+
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    #user-tools form button[type="submit"]:hover {
+        color: #a77d12 !important;
+        background: transparent !important;
+    }
+}
+/* =========================================================
+   LUMÉRA MOBILE THEME FIX
+   ========================================================= */
+
+@media screen and (max-width: 767px) {
+
+    /* =====================================================
+       USER TOOLS / WELCOME
+       ===================================================== */
+
+    /* LIGHT THEME */
+    html[data-theme="light"] #user-tools {
+        color: #222222 !important;
+    }
+
+    html[data-theme="light"] #user-tools strong {
+        color: #222222 !important;
+    }
+
+    html[data-theme="light"] #user-tools a,
+    html[data-theme="light"] #user-tools form button[type="submit"] {
+        color: #c99a22 !important;
+    }
+
+
+    /* DARK THEME */
+    html[data-theme="dark"] #user-tools {
+        color: #ffffff !important;
+    }
+
+    html[data-theme="dark"] #user-tools strong {
+        color: #ffffff !important;
+    }
+
+    html[data-theme="dark"] #user-tools a,
+    html[data-theme="dark"] #user-tools form button[type="submit"] {
+        color: #c99a22 !important;
+    }
+
+
+    /* Logout button */
+    #user-tools form {
+        display: inline !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #user-tools form button[type="submit"] {
+        background: transparent !important;
+        border: none !important;
+        font-family: inherit !important;
+        font-size: inherit !important;
+        padding: 0 !important;
+        margin-left: 5px !important;
+        text-decoration: underline !important;
+        cursor: pointer !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+
+    /* =====================================================
+       AUTHENTICATION + CORE
+       IMPORTANT:
+       On mobile Django moves these into #content-main.
+       ===================================================== */
+
+    /* ---------- LIGHT THEME ---------- */
+
+    html[data-theme="light"] #nav-sidebar .module caption,
+    html[data-theme="light"] #nav-sidebar .module h2,
+    html[data-theme="light"] #content-main .module caption,
+    html[data-theme="light"] #content-main .module h2 {
+
+        background-color: #ffffff !important;
+        color: #c99a22 !important;
+        border-color: #c99a22 !important;
+    }
+
+
+    html[data-theme="light"] #nav-sidebar .module caption a,
+    html[data-theme="light"] #nav-sidebar .module h2 a,
+    html[data-theme="light"] #content-main .module caption a,
+    html[data-theme="light"] #content-main .module h2 a {
+
+        background-color: #ffffff !important;
+        color: #c99a22 !important;
+    }
+
+
+    /* ---------- DARK THEME ---------- */
+
+    html[data-theme="dark"] #nav-sidebar .module caption,
+    html[data-theme="dark"] #nav-sidebar .module h2,
+    html[data-theme="dark"] #content-main .module caption,
+    html[data-theme="dark"] #content-main .module h2 {
+
+        background-color: #000000 !important;
+        color: #c99a22 !important;
+        border-color: #c99a22 !important;
+    }
+
+
+    html[data-theme="dark"] #nav-sidebar .module caption a,
+    html[data-theme="dark"] #nav-sidebar .module h2 a,
+    html[data-theme="dark"] #content-main .module caption a,
+    html[data-theme="dark"] #content-main .module h2 a {
+
+        background-color: #000000 !important;
+        color: #c99a22 !important;
+    }
+
+}
+/* =========================================================
+   LUMÉRA - MOBILE SECTION HEADERS
+   AUTHENTICATION / CORE
+   ========================================================= */
+
+@media screen and (max-width: 767px) {
+
+    /* =====================================================
+       DARK THEME
+       BLACK BACKGROUND + GOLD TEXT
+       ===================================================== */
+
+    html[data-theme="dark"] #content-main .module > h2,
+    html[data-theme="dark"] #content-main .module > caption,
+    html[data-theme="dark"] #content-main .module caption,
+    html[data-theme="dark"] #content-main .module .module-header,
+    html[data-theme="dark"] #content-main .module th {
+        background: #000000 !important;
+        background-color: #000000 !important;
+        color: #c99a22 !important;
+        border-color: #c99a22 !important;
+    }
+
+
+    html[data-theme="dark"] #content-main .module > h2 *,
+    html[data-theme="dark"] #content-main .module > caption *,
+    html[data-theme="dark"] #content-main .module caption *,
+    html[data-theme="dark"] #content-main .module .module-header *,
+    html[data-theme="dark"] #content-main .module th * {
+        color: #c99a22 !important;
+    }
+
+
+    /* =====================================================
+       LIGHT THEME
+       WHITE BACKGROUND + GOLD TEXT
+       ===================================================== */
+
+    html[data-theme="light"] #content-main .module > h2,
+    html[data-theme="light"] #content-main .module > caption,
+    html[data-theme="light"] #content-main .module caption,
+    html[data-theme="light"] #content-main .module .module-header,
+    html[data-theme="light"] #content-main .module th {
+        background: #ffffff !important;
+        background-color: #ffffff !important;
+        color: #c99a22 !important;
+        border-color: #c99a22 !important;
+    }
+
+
+    html[data-theme="light"] #content-main .module > h2 *,
+    html[data-theme="light"] #content-main .module > caption *,
+    html[data-theme="light"] #content-main .module caption *,
+    html[data-theme="light"] #content-main .module .module-header *,
+    html[data-theme="light"] #content-main .module th * {
+        color: #c99a22 !important;
+    }
+
+}
+
+
+@media screen and (max-width: 767px) {
+
+    /* =====================================================
+       AUTHENTICATION AND AUTHORIZATION
+       ===================================================== */
+
+    html[data-theme="dark"]
+    #nav-sidebar .module:has(caption a[href*="/auth/"]) caption,
+    html[data-theme="dark"]
+    #nav-sidebar .module:has(caption a[href*="/auth/"]) caption a {
+
+        background: #0a0a0a !important;
+        background-color: #0a0a0a !important;
+
+        color: #d4af37 !important;
+
+        border: 1px solid #d4af37 !important;
+        border-color: #d4af37 !important;
+
+        box-shadow: none !important;
+    }
+
+
+    /* =====================================================
+       CORE
+       ===================================================== */
+
+    html[data-theme="dark"]
+    #nav-sidebar .module:has(caption a[href*="/core/"]) caption,
+    html[data-theme="dark"]
+    #nav-sidebar .module:has(caption a[href*="/core/"]) caption a {
+
+        background: #0a0a0a !important;
+        background-color: #0a0a0a !important;
+
+        color: #d4af37 !important;
+
+        border: 1px solid #d4af37 !important;
+        border-color: #d4af37 !important;
+
+        box-shadow: none !important;
+    }
+
+
+    /* =====================================================
+       FORCE TEXT INSIDE THE HEADINGS
+       ===================================================== */
+
+    html[data-theme="dark"]
+    #nav-sidebar .module:has(caption a[href*="/auth/"]) caption *,
+    html[data-theme="dark"]
+    #nav-sidebar .module:has(caption a[href*="/core/"]) caption * {
+
+        background: transparent !important;
+        background-color: transparent !important;
+
+        color: #d4af37 !important;
+    }
+
+
+    /* =====================================================
+       KEEP THE REST OF SIDEBAR DARK
+       ===================================================== */
+
+    html[data-theme="dark"] #nav-sidebar {
+        background: #0a0a0a !important;
+    }
+
+    html[data-theme="dark"] #nav-sidebar .module {
+        background: #0a0a0a !important;
+    }
+}
+/* =========================================================
+   REMOVE INNER BOX FROM AUTHENTICATION + CORE
+   DARK MOBILE THEME
+   ========================================================= */
+
+@media screen and (max-width: 767px) {
+
+    html[data-theme="dark"]
+    #nav-sidebar .module:has(caption a[href*="/auth/"]) caption,
+    html[data-theme="dark"]
+    #nav-sidebar .module:has(caption a[href*="/auth/"]) caption a,
+
+    html[data-theme="dark"]
+    #nav-sidebar .module:has(caption a[href*="/core/"]) caption,
+    html[data-theme="dark"]
+    #nav-sidebar .module:has(caption a[href*="/core/"]) caption a {
+
+        border: none !important;
+        border-color: transparent !important;
+
+        box-shadow: none !important;
+    }
+
+
+    /* Keep the heading itself clean */
+
+    html[data-theme="dark"]
+    #nav-sidebar .module:has(caption a[href*="/auth/"]) caption *,
+    html[data-theme="dark"]
+    #nav-sidebar .module:has(caption a[href*="/core/"]) caption * {
+
+        border: none !important;
+        box-shadow: none !important;
+    }
+}
+/* =========================================================
+   LUMÉRA FINAL MOBILE TABLE FIX
+   SERVICE CATEGORIES + ALL ADMIN TABLES
+   ========================================================= */
+
+@media screen and (max-width: 767px) {
+
+    /* Make the table container use the complete screen */
+    #content-main .results,
+    #content-main .results-container,
+    #content-main .results table,
+    #content-main #result_list {
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* Remove the forced horizontal overflow */
+    #content-main .results {
+        overflow-x: hidden !important;
+        overflow-y: visible !important;
+    }
+
+
+    /* Make Django result table actually fill the container */
+    #content-main #result_list {
+        display: table !important;
+        table-layout: auto !important;
+    }
+
+
+    /* Keep table cells inside the mobile width */
+    #content-main #result_list th,
+    #content-main #result_list td {
+
+        box-sizing: border-box !important;
+        max-width: 100% !important;
+    }
+
+
+    /* Service Category names */
+    #content-main #result_list tbody th,
+    #content-main #result_list tbody td {
+
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+    }
+
+
+    /* Don't let the action/checkbox column create extra width */
+    #content-main #result_list .action-checkbox-column {
+
+        width: 45px !important;
+        min-width: 45px !important;
+    }
+}

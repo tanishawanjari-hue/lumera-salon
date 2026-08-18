@@ -1,0 +1,114 @@
+{% extends "core/base.html" %}
+
+{% block title %}
+Location | Luméra Salon & Spa
+{% endblock %}
+
+{% block content %}
+
+<section class="lumera-section location-section">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            FIND US
+        </p>
+
+        <h1>
+            Visit <em>Luméra</em>
+        </h1>
+
+        <p>
+            Step into a space designed for beauty, comfort and confidence.
+        </p>
+
+    </div>
+
+
+    <div class="location-grid">
+
+        <!-- LEFT SIDE -->
+
+        <div class="location-info">
+
+            <div class="location-item">
+
+                <span class="location-label">
+                    ADDRESS
+                </span>
+
+                <h3>
+                    Luméra Salon & Spa
+                </h3>
+
+                <p>
+                    123, Arera Colony<br>
+                    Bhopal, Madhya Pradesh
+                </p>
+
+            </div>
+
+
+            <div class="location-item">
+
+                <span class="location-label">
+                    OPENING HOURS
+                </span>
+
+                <h3>
+                    We're Here For You
+                </h3>
+
+                <p>
+                    Monday – Sunday<br>
+                    10:00 AM – 9:30 PM
+                </p>
+
+            </div>
+
+
+            <div class="location-item">
+
+                <span class="location-label">
+                    GET DIRECTIONS
+                </span>
+
+                <p>
+                    Located in the heart of Arera Colony,
+                    Bhopal.
+                </p>
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Arera+Colony+Bhopal+Madhya+Pradesh"
+                    target="_blank"
+                    class="lumera-button">
+
+                    GET DIRECTIONS →
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE : MAP -->
+
+        <div class="location-map">
+
+            <iframe
+                src="https://www.google.com/maps?q=Arera+Colony+Bhopal+Madhya+Pradesh&output=embed"
+                width="100%"
+                height="100%"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}Luméra Salon & Spa | Logged Out{% endblock %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'core/admin.css' %}">
+{% endblock %}
+
+{% block branding %}{% endblock %}
+{% block nav-global %}{% endblock %}
+{% block nav-sidebar %}{% endblock %}
+{% block breadcrumbs %}{% endblock %}
+{% block content_title %}{% endblock %}
+
+{% block content %}
+
+<div class="logout-page">
+
+    <div class="logout-card">
+
+        <div class="logout-brand">
+            <h1>LUMÉRA</h1>
+            <span>ADMINISTRATION</span>
+        </div>
+
+        <div class="logout-content">
+            <h2>You're logged out</h2>
+
+            <p>
+                You have been safely logged out of the Luméra Administration Panel.
+            </p>
+
+            <a href="{% url 'admin:login' %}" class="logout-login-btn">
+                LOG IN AGAIN
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

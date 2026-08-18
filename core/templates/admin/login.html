@@ -1,0 +1,68 @@
+{% extends "admin/base.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'core/admin.css' %}">
+{% endblock %}
+
+{% block bodyclass %}{{ block.super }} login{% endblock %}
+
+{% block content %}
+<div id="login">
+
+    <div class="lumera-login-brand">
+        <h1>LUMÉRA</h1>
+        <span>ADMINISTRATION</span>
+    </div>
+
+    {% if form.errors and not form.non_field_errors %}
+        <p class="errornote">
+            {% translate "Please enter the correct username and password." %}
+        </p>
+    {% endif %}
+
+    {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+            <p class="errornote">
+                {{ error }}
+            </p>
+        {% endfor %}
+    {% endif %}
+
+    <form action="{{ app_path }}" method="post" id="login-form">
+        {% csrf_token %}
+
+        <div class="form-row">
+            {{ form.username.errors }}
+            <label for="id_username">
+                {{ form.username.label }}
+            </label>
+            {{ form.username }}
+        </div>
+
+        <div class="form-row">
+            {{ form.password.errors }}
+            <label for="id_password">
+                {{ form.password.label }}
+            </label>
+            {{ form.password }}
+            <input type="hidden" name="next" value="{{ next }}">
+        </div>
+
+        <div class="submit-row">
+            <input type="submit" value="{% translate 'Log in' %}">
+        </div>
+    </form>
+
+    {% url 'password_reset' as password_reset_url %}
+    {% if password_reset_url %}
+        <div class="password-reset-link">
+            <a href="{{ password_reset_url }}">
+                {% translate "Forgotten your password or username?" %}
+            </a>
+        </div>
+    {% endif %}
+
+</div>
+{% endblock %}

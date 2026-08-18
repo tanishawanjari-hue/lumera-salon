@@ -1,0 +1,164 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+
+<section class="booking-section">
+
+    <div class="booking-container">
+
+        <div class="booking-heading">
+            <p>YOUR APPOINTMENTS</p>
+
+            <h1>My Bookings</h1>
+
+            <span>
+                View and manage your upcoming and previous appointments.
+            </span>
+        </div>
+
+
+        {% if appointments %}
+
+            <div class="my-bookings-list">
+
+                {% for appointment in appointments %}
+
+                    <div class="booking-card">
+
+                        <!-- APPOINTMENT INFORMATION -->
+
+                        <div class="booking-card-info">
+
+                            <p class="booking-label">
+                                APPOINTMENT
+                            </p>
+
+                            <h2>
+                                {{ appointment.service.name }}
+                            </h2>
+
+                            <div class="booking-details">
+
+                                <p>
+                                    <strong>Date</strong>
+                                    <span>
+                                        {{ appointment.appointment_date }}
+                                    </span>
+                                </p>
+
+                                <p>
+                                    <strong>Time</strong>
+                                    <span>
+                                        {{ appointment.appointment_time }}
+                                    </span>
+                                </p>
+
+                                <p>
+                                    <strong>Phone</strong>
+                                    <span>
+                                        {{ appointment.phone }}
+                                    </span>
+                                </p>
+
+                                {% if appointment.message %}
+
+                                    <p>
+                                        <strong>Message</strong>
+                                        <span>
+                                            {{ appointment.message }}
+                                        </span>
+                                    </p>
+
+                                {% endif %}
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- APPOINTMENT STATUS -->
+
+                        <div class="booking-card-status">
+
+                            <p class="booking-label">
+                                STATUS
+                            </p>
+
+                            <span class="status-{{ appointment.status }}">
+                                {{ appointment.get_status_display }}
+                            </span>
+
+
+                            {% if appointment.status == "pending" %}
+
+                                <a
+                                    href="{% url 'cancel_appointment' appointment.id %}"
+                                    class="cancel-button"
+                                >
+                                    CANCEL APPOINTMENT
+                                </a>
+
+                            {% elif appointment.status == "confirmed" %}
+
+                                <p class="booking-status-text">
+                                    Your appointment has been confirmed.
+                                </p>
+
+                            {% elif appointment.status == "completed" %}
+
+                                <p class="booking-status-text">
+                                    Thank you for visiting Luméra.
+                                </p>
+
+                            {% elif appointment.status == "cancelled" %}
+
+                                <p class="booking-status-text">
+                                    This appointment was cancelled.
+                                </p>
+
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+
+        {% else %}
+
+            <!-- NO BOOKINGS -->
+
+            <div class="no-bookings">
+
+                <p class="booking-label">
+                    YOUR JOURNEY STARTS HERE
+                </p>
+
+                <h2>
+                    No bookings yet
+                </h2>
+
+                <p>
+                    You haven't booked an appointment yet.
+                    Choose a service and let us take care of the rest.
+                </p>
+
+                <a
+                    href="{% url 'book_appointment' %}"
+                    class="booking-button"
+                >
+                    BOOK AN APPOINTMENT
+                </a>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}

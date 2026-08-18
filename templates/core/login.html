@@ -1,0 +1,108 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+Login | Luméra Salon & Spa
+{% endblock %}
+
+
+{% block content %}
+
+<section class="auth-page">
+
+    <div class="auth-card">
+
+        <div class="auth-header">
+
+            <p class="eyebrow">
+                WELCOME BACK
+            </p>
+
+            <h1>
+                Sign In
+            </h1>
+
+            <p>
+                Access your Luméra account and manage
+                your beauty appointments.
+            </p>
+
+        </div>
+
+
+        {% if messages %}
+
+            {% for message in messages %}
+
+                <div class="lumera-message {{ message.tags }}">
+                    {{ message }}
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+
+            <div class="form-group">
+
+                <label>
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="Enter your username"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="lumera-btn"
+            >
+                SIGN IN
+            </button>
+
+        </form>
+
+
+        <div class="auth-footer">
+
+            <p>
+                Don't have an account?
+
+                <a href="{% url 'register' %}">
+                    Create one
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

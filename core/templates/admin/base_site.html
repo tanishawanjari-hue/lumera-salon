@@ -1,0 +1,521 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'core/admin.css' %}">
+{% endblock %}
+
+
+{% block title %}
+    Luméra Salon & Spa | Administration
+{% endblock %}
+
+
+{% block branding %}
+<h1 id="site-name">
+    <a href="{% url 'admin:index' %}">
+        LUMÉRA
+    </a>
+</h1>
+{% endblock %}
+
+
+{% block nav-global %}
+{% endblock %}
+
+
+{% block extrabody %}
+    {{ block.super }}
+
+
+    <!-- ================================================= -->
+    <!-- LUMÉRA TWO-STATE THEME SWITCH -->
+    <!-- ================================================= -->
+
+    <script>
+    (function () {
+
+        const savedTheme =
+            localStorage.getItem("lumera-theme");
+
+        if (savedTheme === "dark") {
+
+            document.documentElement.setAttribute(
+                "data-theme",
+                "dark"
+            );
+
+        } else {
+
+            document.documentElement.setAttribute(
+                "data-theme",
+                "light"
+            );
+
+        }
+
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const themeButton =
+                    document.querySelector(".theme-toggle");
+
+                if (!themeButton) {
+                    return;
+                }
+
+
+                themeButton.addEventListener(
+                    "click",
+                    function (event) {
+
+                        event.preventDefault();
+                        event.stopPropagation();
+                        event.stopImmediatePropagation();
+
+
+                        const currentTheme =
+                            document.documentElement.getAttribute(
+                                "data-theme"
+                            );
+
+
+                        const newTheme =
+                            currentTheme === "dark"
+                                ? "light"
+                                : "dark";
+
+
+                        document.documentElement.setAttribute(
+                            "data-theme",
+                            newTheme
+                        );
+
+
+                        localStorage.setItem(
+                            "lumera-theme",
+                            newTheme
+                        );
+
+                    },
+                    true
+                );
+
+            }
+        );
+
+    })();
+    </script>
+
+
+    <!-- ================================================= -->
+    <!-- LOGOUT CONFIRMATION MODAL -->
+    <!-- ================================================= -->
+
+    <div id="logout-modal" class="logout-modal">
+
+        <div class="logout-dialog">
+
+            <h2>Log out?</h2>
+
+            <p>
+                Are you sure you want to log out of
+                Luméra Administration?
+            </p>
+
+            <div class="logout-dialog-actions">
+
+                <button
+                    type="button"
+                    id="cancel-logout"
+                >
+                    CANCEL
+                </button>
+
+                <button
+                    type="button"
+                    id="confirm-logout"
+                >
+                    LOG OUT
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LOGOUT SCRIPT -->
+    <!-- ================================================= -->
+
+    <script>
+    document.addEventListener(
+        "DOMContentLoaded",
+        function () {
+
+            const logoutForm =
+                document.querySelector(
+                    'form[action$="/logout/"]'
+                );
+
+            const modal =
+                document.getElementById(
+                    "logout-modal"
+                );
+
+            const cancelButton =
+                document.getElementById(
+                    "cancel-logout"
+                );
+
+            const confirmButton =
+                document.getElementById(
+                    "confirm-logout"
+                );
+
+
+            if (!logoutForm || !modal) {
+                return;
+            }
+
+
+            logoutForm.addEventListener(
+                "submit",
+                function (event) {
+
+                    event.preventDefault();
+
+                    modal.classList.add("show");
+
+                }
+            );
+
+
+            cancelButton.addEventListener(
+                "click",
+                function () {
+
+                    modal.classList.remove("show");
+
+                }
+            );
+
+
+            confirmButton.addEventListener(
+                "click",
+                function () {
+
+                    HTMLFormElement.prototype.submit.call(
+                        logoutForm
+                    );
+
+                }
+            );
+
+
+            modal.addEventListener(
+                "click",
+                function (event) {
+
+                    if (event.target === modal) {
+
+                        modal.classList.remove("show");
+
+                    }
+
+                }
+            );
+
+        }
+    );
+    </script>
+
+
+    <!-- ================================================= -->
+    <!-- LUMÉRA READ / UNREAD TOGGLE -->
+    <!-- DESKTOP + MOBILE -->
+    <!-- NO PAGE RELOAD -->
+    <!-- NO SCROLL -->
+    <!-- ================================================= -->
+
+    <script>
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            const button =
+                event.target.closest(
+                    ".lumera-read-status"
+                );
+
+
+            /* Not our button */
+            if (!button) {
+                return;
+            }
+
+
+            /*
+             * STOP Django's normal <a> navigation.
+             */
+            event.preventDefault();
+            event.stopPropagation();
+            event.stopImmediatePropagation();
+
+
+            const url =
+                button.getAttribute("href");
+
+
+            if (!url) {
+                return;
+            }
+
+
+            /*
+             * Toggle status through Django.
+             */
+            fetch(
+                url,
+                {
+                    method: "GET",
+
+                    credentials: "same-origin",
+
+                    headers: {
+                        "X-Requested-With":
+                            "XMLHttpRequest",
+
+                        "Accept":
+                            "application/json"
+                    }
+                }
+            )
+            .then(
+                function (response) {
+
+                    if (!response.ok) {
+
+                        throw new Error(
+                            "Failed to toggle read status"
+                        );
+
+                    }
+
+                    return response.json();
+
+                }
+            )
+            .then(
+                function (data) {
+
+                    if (!data.success) {
+                        return;
+                    }
+
+
+                    /*
+                     * Change ONLY the clicked button.
+                     */
+
+                    if (data.is_read) {
+
+                        button.textContent = "✓";
+
+                        button.classList.remove(
+                            "unread"
+                        );
+
+                        button.classList.add(
+                            "read"
+                        );
+
+                    } else {
+
+                        button.textContent = "✕";
+
+                        button.classList.remove(
+                            "read"
+                        );
+
+                        button.classList.add(
+                            "unread"
+                        );
+
+                    }
+
+                }
+            )
+            .catch(
+                function (error) {
+
+                    console.error(
+                        "Luméra read status:",
+                        error
+                    );
+
+                }
+            );
+
+        },
+        true
+    );
+
+    </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    function styleLumeraSections() {
+
+        const headings = document.querySelectorAll(
+            "#nav-sidebar *"
+        );
+
+        headings.forEach(function (element) {
+
+            const text = element.textContent.trim();
+
+            if (
+                text === "AUTHENTICATION AND AUTHORIZATION" ||
+                text === "CORE"
+            ) {
+
+                element.classList.add(
+                    "lumera-section-heading"
+                );
+
+            }
+
+        });
+
+    }
+
+    styleLumeraSections();
+
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    function fixLumeraSectionHeaders() {
+
+        const targetTexts = [
+            "AUTHENTICATION AND AUTHORIZATION",
+            "CORE"
+        ];
+
+        const allElements = document.querySelectorAll(
+            "#nav-sidebar *"
+        );
+
+        allElements.forEach(function (element) {
+
+            const text = element.textContent.trim();
+
+            if (!targetTexts.includes(text)) {
+                return;
+            }
+
+            /*
+             * Find the actual visible heading box.
+             */
+            let heading = element;
+
+            for (let i = 0; i < 5; i++) {
+
+                if (!heading.parentElement) {
+                    break;
+                }
+
+                const rect = heading.getBoundingClientRect();
+
+                if (
+                    rect.width > 250 &&
+                    rect.height >= 35 &&
+                    rect.height <= 100
+                ) {
+                    break;
+                }
+
+                heading = heading.parentElement;
+            }
+
+
+            /*
+             * Apply Luméra colours directly.
+             */
+            const dark =
+                document.documentElement.getAttribute("data-theme")
+                === "dark";
+
+            heading.style.setProperty(
+                "background",
+                dark ? "#000000" : "#ffffff",
+                "important"
+            );
+
+            heading.style.setProperty(
+                "background-color",
+                dark ? "#000000" : "#ffffff",
+                "important"
+            );
+
+            heading.style.setProperty(
+                "color",
+                "#C99A22",
+                "important"
+            );
+
+            heading.style.setProperty(
+                "border-color",
+                "#C99A22",
+                "important"
+            );
+
+
+            /*
+             * Also make the actual text gold.
+             */
+            element.style.setProperty(
+                "color",
+                "#C99A22",
+                "important"
+            );
+
+        });
+
+    }
+
+
+    /*
+     * Run now.
+     */
+    fixLumeraSectionHeaders();
+
+
+    /*
+     * Re-run whenever Django/theme changes the page.
+     */
+    const observer = new MutationObserver(function () {
+        fixLumeraSectionHeaders();
+    });
+
+    observer.observe(
+        document.documentElement,
+        {
+            attributes: true,
+            subtree: true,
+            attributeFilter: ["data-theme", "class"]
+        }
+    );
+
+});
+</script>
+
+{% endblock extrabody %}

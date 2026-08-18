@@ -1,0 +1,50 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+{{ category.name }} | Luméra Salon & Spa
+{% endblock %}
+
+{% block content %}
+
+{% if category.image %}
+<div class="category-hero-image">
+    <img src="{{ category.image.url }}" alt="{{ category.name }}">
+</div>
+{% endif %}
+
+<section class="category-services-page">
+
+
+    <div class="service-list">
+
+        {% for service in services %}
+
+        <div class="service-detail-card">
+
+            <div>
+                <h3>{{ service.name }}</h3>
+
+                <p>{{ service.description }}</p>
+
+                {% if service.duration %}
+                <span>{{ service.duration }}</span>
+                {% endif %}
+            </div>
+
+            <div class="service-price">
+                <strong>₹{{ service.price }}</strong>
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <p>No services available in this category.</p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

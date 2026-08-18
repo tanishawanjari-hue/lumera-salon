@@ -1,0 +1,608 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}
+Luméra Salon & Spa | Bhopal
+{% endblock %}
+
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="lumera-hero">
+
+    <div class="hero-content">
+
+        <p class="hero-eyebrow">
+            WHERE BEAUTY MEETS CONFIDENCE
+        </p>
+
+        <h1>
+            Welcome to <span>Luméra</span>
+        </h1>
+
+        <p class="hero-description">
+            Premium hair, skin & beauty services.
+        </p>
+        <a href="#contact" class="hero-cta">
+    ENQUIRE NOW →
+</a>
+
+    </div>
+
+
+    <div class="hero-image">
+
+        <img
+            src="{% static 'core/images/lumera-hero.png' %}"
+            alt="Luméra Salon & Spa"
+        >
+
+    </div>
+
+</section>
+<!-- ABOUT SECTION -->
+<section id="about" class="lumera-section about-section">
+
+    <div class="about-wrapper">
+
+        <!-- LEFT: IMAGE -->
+        <div class="about-image">
+            <img
+                src="{% static 'core/images/lumera-about.png' %}"
+                alt="Luméra Salon Interior"
+            >
+        </div>
+
+
+        <!-- RIGHT: CONTENT -->
+        <div class="about-info">
+            <p class="about-eyebrow">
+                ABOUT LUMÉRA
+            </p>
+
+            <h2 class="about-title">
+    <span class="title-white">Beauty Is More Than</span>
+    <span class="title-gold">A Look.</span>
+</h2>
+            <div class="about-divider">
+                <span></span>
+                <i>✦</i>
+                <span></span>
+            </div>
+
+            <h3>
+                WHERE BEAUTY MEETS CONFIDENCE
+            </h3>
+
+            <p class="about-description">
+                At Luméra Salon & Spa, we believe beauty is about
+                confidence, care and feeling your absolute best.
+            </p>
+
+            <p class="about-description">
+                Our team of experienced beauty professionals is
+                dedicated to creating a personalized experience
+                for every client.
+            </p>
+
+            <p class="about-description">
+                From hair styling and skincare to makeup and nail
+                care, every service is designed with attention to detail.
+            </p>
+
+
+            <!-- STATS -->
+            <div class="about-stats">
+
+                <div class="about-stat">
+                    <strong>10+</strong>
+                    <span>Years Experience</span>
+                </div>
+
+                <div class="about-stat">
+                    <strong>5000+</strong>
+                    <span>Happy Clients</span>
+                </div>
+
+                <div class="about-stat">
+                    <strong>20+</strong>
+                    <span>Beauty Services</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SERVICES SECTION -->
+<section id="services" class="services-section">
+
+    <div class="section-heading">
+
+        <p class="eyebrow services-eyebrow">
+            <span></span>
+            EXPLORE OUR SERVICES
+            <span></span>
+        </p>
+
+        <h2>
+            Beauty, Crafted <em>For You</em>
+        </h2>
+
+        <p>
+            Discover our premium beauty services designed around your needs.
+        </p>
+
+    </div>
+
+
+    <div class="service-category-grid">
+
+        {% for category in categories %}
+
+        <a href="{% url 'category_services' category.id %}"
+           class="service-category-card">
+
+            <div class="category-image">
+
+                {% if category.name == "Skincare" %}
+
+                    <img
+                        src="{% static 'core/images/skincare.png' %}"
+                        alt="Skincare"
+                    >
+
+                {% elif category.name == "Makeup" %}
+
+                    <img
+                        src="{% static 'core/images/makeup.png' %}"
+                        alt="Makeup"
+                    >
+
+                {% elif category.name == "Hair" %}
+
+                    <img
+                        src="{% static 'core/images/hair.png' %}"
+                        alt="Hair"
+                    >
+
+                {% elif category.name == "Nails" %}
+
+                    <img
+                        src="{% static 'core/images/nails.png' %}"
+                        alt="Nails"
+                    >
+
+                {% endif %}
+
+            </div>
+
+
+            <div class="category-content">
+
+                <h3>
+                    {{ category.name }}
+                </h3>
+
+
+                {% if category.description %}
+
+                    <p>
+                        {{ category.description }}
+                    </p>
+
+                {% endif %}
+
+
+                <span class="explore-services">
+                    EXPLORE SERVICES →
+                </span>
+
+            </div>
+
+        </a>
+
+        {% empty %}
+
+            <div class="empty-services">
+                <p>
+                    Services coming soon.
+                </p>
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+<!-- GALLERY SECTION -->
+<section id="gallery" class="lumera-section gallery-section">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">OUR WORK</p>
+
+        <h2>
+            A Glimpse of <em>Luméra</em>
+        </h2>
+
+        <p>
+            Discover the atmosphere, artistry and attention to detail behind every visit.
+        </p>
+
+    </div>
+
+
+    <div class="lumera-gallery">
+
+        <div class="gallery-item gallery-large">
+            <img
+                src="{% static 'core/images/gallery-1.jpg' %}"
+                alt="Luméra Salon interior"
+            >
+        </div>
+
+
+        <div class="gallery-item">
+            <img
+                src="{% static 'core/images/gallery-2.jpg' %}"
+                alt="Hair styling at Luméra"
+            >
+        </div>
+
+
+        <div class="gallery-item">
+            <img
+                src="{% static 'core/images/gallery-3.jpg' %}"
+                alt="Beauty treatment at Luméra"
+            >
+        </div>
+
+
+        <div class="gallery-item">
+            <img
+                src="{% static 'core/images/gallery-4.jpg' %}"
+                alt="Makeup service at Luméra"
+            >
+        </div>
+
+
+        <div class="gallery-item">
+            <img
+                src="{% static 'core/images/gallery-5.jpg' %}"
+                alt="Nail care at Luméra"
+            >
+        </div>
+
+
+        <div class="gallery-item gallery-wide">
+            <img
+                src="{% static 'core/images/gallery-6.jpg' %}"
+                alt="Luméra salon experience"
+            >
+        </div>
+
+
+        <div class="gallery-item gallery-small">
+            <img
+                src="{% static 'core/images/gallery-7.jpg' %}"
+                alt="Luméra beauty details"
+            >
+        </div>
+
+    </div>
+
+</section>
+
+<!-- LOCATION SECTION -->
+
+<section id="location" class="lumera-section location-section">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            FIND US
+        </p>
+
+        <h2>Visit <span class="gold-text">Luméra</span></h2>
+        <p>
+            Step into a space designed for beauty, comfort and confidence.
+        </p>
+
+    </div>
+
+
+    <div class="location-grid">
+
+        <!-- LEFT SIDE -->
+
+        <div class="location-info">
+
+            <div class="location-item">
+
+                <span class="location-label">
+                    ADDRESS
+                </span>
+
+                <h3>
+                    Luméra Salon & Spa
+                </h3>
+
+                <p>
+                    123, Arera Colony<br>
+                    Bhopal, Madhya Pradesh
+                </p>
+
+            </div>
+
+
+            <div class="location-item">
+
+                <span class="location-label">
+                    OPENING HOURS
+                </span>
+
+                <h3>
+                    We're Here For You
+                </h3>
+
+                <p>
+                    Monday – Sunday<br>
+                    10:00 AM – 9:30 PM
+                </p>
+
+            </div>
+
+
+            <div class="location-item">
+
+                <span class="location-label">
+                    GET DIRECTIONS
+                </span>
+
+                <p>
+                    Located in the heart of Arera Colony, Bhopal.
+                </p>
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Arera+Colony+Bhopal+Madhya+Pradesh"
+                    target="_blank"
+                    class="lumera-button">
+
+                    GET DIRECTIONS →
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- MAP -->
+
+        <div class="location-map">
+
+            <iframe
+                src="https://www.google.com/maps?q=Arera+Colony+Bhopal+Madhya+Pradesh&output=embed"
+                width="100%"
+                height="100%"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="lumera-section contact-section">
+
+    <div class="section-heading">
+
+        <h2>
+            Let's <em>Connect</em>
+        </h2>
+
+        <p>
+            We'd love to hear from you and help you plan your perfect visit.
+        </p>
+
+    </div>
+
+
+    <div class="contact-content">
+
+
+        <!-- CONTACT FORM -->
+
+        <div class="contact-form-box">
+
+            <h3>Send Us a Message</h3>
+
+          <form id="contactForm" method="POST" action="{% url 'contact' %}">
+    {% csrf_token %}
+                
+                {% csrf_token %}
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter your phone number"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Your Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        placeholder="How can we help you?"
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit">
+                    SEND MESSAGE →
+                </button>
+
+            </form>
+
+        </div>
+
+
+
+        <!-- CONTACT INFORMATION -->
+
+        <div class="contact-info-box">
+
+            <h3>Contact Us</h3>
+
+
+            <!-- PHONE -->
+
+<a href="tel:+919876543210" class="contact-info-item contact-link">
+
+    <div class="contact-icon">
+        ☎
+    </div>
+
+    <div>
+
+        <span>
+            Call Us
+        </span>
+
+        <p>
+            +91 98765 43210
+        </p>
+
+    </div>
+
+</a>
+
+
+            <!-- EMAIL -->
+
+<a href="mailto:lumera.salon@gmail.com" class="contact-info-item contact-link">
+
+    <div class="contact-icon">
+        ✉
+    </div>
+
+    <div>
+
+        <span>
+            Email
+        </span>
+
+        <p>
+            lumera.salon@gmail.com
+        </p>
+
+    </div>
+
+</a>
+
+            <!-- OPENING HOURS -->
+
+            <div class="contact-info-item">
+
+                <div class="contact-icon">
+                    ◷
+                </div>
+
+                <div>
+
+                    <span>
+                        Opening Hours
+                    </span>
+
+                    <p>
+                        Monday – Sunday<br>
+                        10:00 AM – 9:30 PM
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- WHATSAPP -->
+
+<a href="https://wa.me/919876543210"
+   target="_blank"
+   class="contact-info-item contact-link">
+
+    <div class="contact-icon">
+        💬
+    </div>
+
+    <div>
+
+        <span>
+            WhatsApp
+        </span>
+
+        <p>
+            Chat With Us
+        </p>
+
+    </div>
+
+</a>
+
+        </div>
+
+    </div>
+
+</section>
+{% endblock %}

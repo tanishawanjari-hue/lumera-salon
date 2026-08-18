@@ -1,0 +1,141 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+Create Account | Luméra Salon & Spa
+{% endblock %}
+
+{% block content %}
+
+<section class="auth-page">
+
+    <div class="auth-card">
+
+        <div class="auth-header">
+
+            <p class="eyebrow">
+                WELCOME TO LUMÉRA
+            </p>
+
+            <h1>
+                Create Your Account
+            </h1>
+
+            <p>
+                Join Luméra and make your next beauty appointment
+                even easier.
+            </p>
+
+        </div>
+
+
+        <!-- Messages -->
+
+        {% if messages %}
+
+            {% for message in messages %}
+
+                <div class="lumera-message {{ message.tags }}">
+                    {{ message }}
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+
+            <div class="form-group">
+
+                <label>
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="Choose a username"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Create a password"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Confirm Password
+                </label>
+
+                <input
+                    type="password"
+                    name="confirm_password"
+                    placeholder="Confirm your password"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="lumera-btn"
+            >
+                CREATE ACCOUNT
+            </button>
+
+        </form>
+
+
+        <div class="auth-footer">
+
+    <p>
+        Already have an account?
+
+        <a href="{% url 'login' %}">
+            Sign in
+        </a>
+    </p>
+
+</div>
+
+    </div>
+
+</section>
+
+{% endblock %}
